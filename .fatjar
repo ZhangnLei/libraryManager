@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Wed Jan 09 10:48:15 CST 2008
+onejar.license.required=true
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=false
+jarname=C\:\\Program Files\\Java\\jdk1.6.0\\bin\\libraryManager.jar
+manifest.mergeall=true
+manifest.mainclass=com.wsy.Library
+manifest.file=<createnew>
+jarname.isextern=true
+onejar.expand=
+excludes=<po|libraryManager>~CVS/
+includes=
