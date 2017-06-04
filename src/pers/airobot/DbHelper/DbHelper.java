@@ -9,8 +9,8 @@ import java.util.List;
 public class DbHelper {
 	protected static String driver = "com.mysql.jdbc.Driver";
 	protected static String dbUrl = "jdbc:mysql://123.207.175.13:3306/db_library";
-	protected static String dbUser = "root";
-	protected static String dbPwd = "Zhangnianlei807.";
+	protected static String dbUser = "hello";
+	protected static String dbPwd = "he11oKitty.";
 	protected static String second = null;
 	private static Connection conn = null;
 	
@@ -47,7 +47,7 @@ public class DbHelper {
 			return conn.createStatement().executeUpdate(sql);
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
-			//if(e.getMessage().equals("[Microsoft][SQLServer 2000 Driver for JDBC][SQLServer]DELETE Óï¾äÓë COLUMN REFERENCE Ô¼Êø 'FK_TB_BORRO_REFERENCE_TB_BOOKI' ³åÍ»¡£¸Ã³åÍ»·¢ÉúÓÚÊı¾İ¿â 'db_library'£¬±í 'tb_borrow', column 'bookISBN'¡£"))
+			//if(e.getMessage().equals("[Microsoft][SQLServer 2000 Driver for JDBC][SQLServer]DELETE è¯­å¥ä¸ COLUMN REFERENCE çº¦æŸ 'FK_TB_BORRO_REFERENCE_TB_BOOKI' å†²çªã€‚è¯¥å†²çªå‘ç”Ÿäºæ•°æ®åº“ 'db_library'ï¼Œè¡¨ 'tb_borrow', column 'bookISBN'ã€‚"))
 				
 			return -1;
 		} finally {
@@ -64,7 +64,7 @@ public class DbHelper {
 		}
 	}
 	/*
-	 * ¹ÜÀíÔ±µÇÂ¼·½·¨
+	 * ç®¡ç†å‘˜ç™»å½•æ–¹æ³•
 	 */
 	public static Operater check(String name, String password) {
 		//int i = 0;
@@ -91,7 +91,7 @@ public class DbHelper {
 		
 	}
 	/*
-	 * ²éÑ¯Àà±ğ·½·¨
+	 * æŸ¥è¯¢ç±»åˆ«æ–¹æ³•
 	 */
 	public static List<BookType> selectBookCategory() {
 		List<BookType> list=new ArrayList<BookType>();
@@ -131,7 +131,7 @@ public class DbHelper {
 		
 	}
 	/*
-	 * Í¼ÊéÀà±ğ±íÏà¹Ø²Ù×÷
+	 * å›¾ä¹¦ç±»åˆ«è¡¨ç›¸å…³æ“ä½œ
 	 * 
 	 */
 	public static int InsertBookType(String bookTypeName,String days,Double fk){
@@ -168,7 +168,7 @@ public class DbHelper {
 //		DbHelper.close();
 //		return i;
 //	}
-	public static List<BookType> selectBookTypeFk(String bookType) {//È¡Ã¿ÖÖÊé³¬¹ı¹æ¶¨Ê±¼ä·£¿î½ğ¶î
+	public static List<BookType> selectBookTypeFk(String bookType) {//å–æ¯ç§ä¹¦è¶…è¿‡è§„å®šæ—¶é—´ç½šæ¬¾é‡‘é¢
 		List<BookType> list=new ArrayList<BookType>();
 		String sql = "select *  from tb_bookType where typeName='"+bookType+"'";
 		ResultSet rs = DbHelper.executeQuery(sql);
@@ -187,10 +187,10 @@ public class DbHelper {
 		
 	}
 	/*
-	 * Í¼ÊéĞÅÏ¢±íÏà¹Ø²Ù×÷
+	 * å›¾ä¹¦ä¿¡æ¯è¡¨ç›¸å…³æ“ä½œ
 	 */
 	/*
-	 * ²åÈëÍ¼ÊéĞÅÏ¢·½·¨
+	 * æ’å…¥å›¾ä¹¦ä¿¡æ¯æ–¹æ³•
 	 */
 	public static int Insertbook(String ISBN,String typeId,String bookname,String writer,String translator,String publisher,Date date,Double price){
 		int i=0;
@@ -205,7 +205,7 @@ public class DbHelper {
 		return i;
 	}
 	/*
-	 * ²éÑ¯Í¼ÊéÏà¹ØĞÅÏ¢
+	 * æŸ¥è¯¢å›¾ä¹¦ç›¸å…³ä¿¡æ¯
 	 * 
 	 */
 
@@ -256,7 +256,7 @@ public class DbHelper {
 		return list;
 	}
 	/*
-	 * ĞŞ¸ÄÍ¼ÊéĞÅÏ¢·½·¨
+	 * ä¿®æ”¹å›¾ä¹¦ä¿¡æ¯æ–¹æ³•
 	 */
 	public static int Updatebook(String ISBN,String typeId,String bookname,String writer,String translator,String publisher,Date date,Double price){
 		int i=0;
@@ -271,7 +271,7 @@ public class DbHelper {
 		return i;
 	}
 //	/*
-//	 * É¾³ıÍ¼ÊéĞÅÏ¢·½·¨
+//	 * åˆ é™¤å›¾ä¹¦ä¿¡æ¯æ–¹æ³•
 //	 */
 //	public static int Delbook(String ISBN){
 //		int i=0;
@@ -287,7 +287,7 @@ public class DbHelper {
 //		return i;
 //	}
 	/*
-	 * ¶Ô¶ÁÕßĞÅÏ¢±íÖ´ĞĞµÄÏà¹Ø²Ù×÷
+	 * å¯¹è¯»è€…ä¿¡æ¯è¡¨æ‰§è¡Œçš„ç›¸å…³æ“ä½œ
 	 */
 	public static int InsertReader(String name,String sex,String age,String identityCard,Date date,String maxNum,String tel,Double keepMoney,String zj,String zy,Date bztime,String ISBN){
 		int i=0;
@@ -380,7 +380,7 @@ public class DbHelper {
 		return i;
 	}
 /*
- * ¶Ô¶©¹ºĞÅÏ¢±í²Ù×÷
+ * å¯¹è®¢è´­ä¿¡æ¯è¡¨æ“ä½œ
  */
 	public static int InsertBookOrder(String ISBN,Date date,String number,String operator,String checkAndAccept,Double zk){
 		int i=0;
@@ -457,7 +457,7 @@ public class DbHelper {
 		
 	}
 	/*
-	 * ¶Ô½èÔÄ±í½øĞĞ²Ù×÷
+	 * å¯¹å€Ÿé˜…è¡¨è¿›è¡Œæ“ä½œ
 	 */
 	public static int InsertBookBorrow(String bookISBN,String readerISBN,String operatorId,Timestamp borrowDate,Timestamp backDate){
 		int i=0;
@@ -493,7 +493,7 @@ public class DbHelper {
 		return list;
 	}
 	/*
-	 * ²éÑ¯»¹ÊéÄÚÈİ£¬tb_bookinfo tb_reader tb_borrowÖ®¼äµÄ²éÑ¯
+	 * æŸ¥è¯¢è¿˜ä¹¦å†…å®¹ï¼Œtb_bookinfo tb_reader tb_borrowä¹‹é—´çš„æŸ¥è¯¢
 	 */
 	public static List<Back> selectBookBack(String readerISBN) {
 		List<Back> list=new ArrayList<Back>();
@@ -520,7 +520,7 @@ public class DbHelper {
 		DbHelper.close();
 		return list;
 	}
-	public static int UpdateBookBack(String bookISBN,String readerISBN,int id){//¹é»¹Í¼Êé²Ù×÷
+	public static int UpdateBookBack(String bookISBN,String readerISBN,int id){//å½’è¿˜å›¾ä¹¦æ“ä½œ
 		int i=0;
 		try{
 			String sql="update tb_borrow set isback=0 where bookISBN='"+bookISBN+"'and readerISBN='"+readerISBN+"' and id="+id+"";
@@ -578,7 +578,7 @@ public class DbHelper {
 				list.add(bookinfo);
 			}
 		} catch (SQLException e) {
-			// TODO ×Ô¶¯Éú³É catch ¿é
+			// TODO è‡ªåŠ¨ç”Ÿæˆ catch å—
 			e.printStackTrace();
 		}
 		return list;
@@ -605,7 +605,7 @@ public class DbHelper {
 				list.add(bookinfo);
 			}
 		} catch (SQLException e) {
-			// TODO ×Ô¶¯Éú³É catch ¿é
+			// TODO è‡ªåŠ¨ç”Ÿæˆ catch å—
 			e.printStackTrace();
 		}
 		return list;
