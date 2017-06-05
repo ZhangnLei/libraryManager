@@ -8,7 +8,7 @@ import java.util.List;
 
 public class DbHelper {
 	protected static String driver = "com.mysql.jdbc.Driver";
-	protected static String dbUrl = "jdbc:mysql://123.207.175.13:3306/db_library";
+	protected static String dbUrl = "jdbc:mysql://123.207.175.13:3306/db_library?useUnicode=true&characterEncoding=utf8";
 	protected static String dbUser = "hello";
 	protected static String dbPwd = "he11oKitty.";
 	protected static String second = null;
@@ -360,6 +360,7 @@ public class DbHelper {
 		int i=0;
 		try{
 			String sql="update tb_reader set name='"+name+"',sex='"+sex+"',age='"+age+"',identityCard='"+identityCard+"',date='"+date+"',maxNum='"+maxNum+"',tel='"+tel+"',keepMoney="+keepMoney+",zj='"+zj+"',zy='"+zy+"',bztime='"+bztime+"'where ISBN='"+ISBN+"'";
+			System.out.println(sql);
 			i=DbHelper.executeUpdate(sql);
 		}catch(Exception e){
 			e.printStackTrace();
