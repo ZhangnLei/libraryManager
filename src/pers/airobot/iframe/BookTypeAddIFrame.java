@@ -1,26 +1,16 @@
 package pers.airobot.iframe;
 
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
+import pers.airobot.DbHelper.DbHelper;
+import pers.airobot.util.CreatecdIcon;
+import pers.airobot.util.MyDocument;
+
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.text.NumberFormat;
-
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFormattedTextField;
-import javax.swing.JInternalFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-
-import pers.airobot.DbHelper.DbHelper;
-import pers.airobot.util.CreatecdIcon;
-import pers.airobot.util.MyDocument;
 
 public class BookTypeAddIFrame extends JInternalFrame {
 
@@ -38,10 +28,10 @@ public class BookTypeAddIFrame extends JInternalFrame {
 	 */
 	public BookTypeAddIFrame() {
 		super();
-		setIconifiable(true);							// ÉèÖÃ´°Ìå¿É×îĞ¡»¯£­£­£­±ØĞë
+		setIconifiable(true);							// è®¾ç½®çª—ä½“å¯æœ€å°åŒ–ï¼ï¼ï¼å¿…é¡»
 		setClosable(true);
 		//setResizable(true);
-		setTitle("Í¼ÊéÀà±ğÌí¼Ó");
+		setTitle("å›¾ä¹¦ç±»åˆ«æ·»åŠ ");
 		setBounds(100, 100, 500, 400);
 
 		final JPanel panel = new JPanel();
@@ -53,7 +43,7 @@ public class BookTypeAddIFrame extends JInternalFrame {
 		ImageIcon bookTypeAddIcon=CreatecdIcon.add("bookTypeAdd.jpg");
 		label_4.setIcon(bookTypeAddIcon);
 		label_4.setPreferredSize(new Dimension(400, 80));
-		label_4.setText("Í¼ÊéÀà±ğÍ¼Æ¬£¨400*80£©");
+		label_4.setText("å›¾ä¹¦ç±»åˆ«å›¾ç‰‡ï¼ˆ400*80ï¼‰");
 		panel.add(label_4);
 
 		final JPanel panel_2 = new JPanel();
@@ -73,7 +63,7 @@ public class BookTypeAddIFrame extends JInternalFrame {
 
 		final JLabel label_2 = new JLabel();
 		label_2.setPreferredSize(new Dimension(160, 20));
-		label_2.setText("Í¼ÊéÀà±ğÃû³Æ£º");
+		label_2.setText("å›¾ä¹¦ç±»åˆ«åç§°ï¼š");
 		panel_3.add(label_2);
 
 		bookTypeName = new JTextField();
@@ -83,7 +73,7 @@ public class BookTypeAddIFrame extends JInternalFrame {
 
 		final JLabel label_3 = new JLabel();
 		label_3.setPreferredSize(new Dimension(160, 20));
-		label_3.setText("¿É ½è Ìì Êı£º");
+		label_3.setText("å¯ å€Ÿ å¤© æ•°ï¼š");
 		panel_3.add(label_3);
 
 		days = new JFormattedTextField(NumberFormat.getIntegerInstance());
@@ -93,10 +83,10 @@ public class BookTypeAddIFrame extends JInternalFrame {
         
 		final JLabel label_5 = new JLabel();
 		label_5.setPreferredSize(new Dimension(160, 20));
-		label_5.setText("·£¿î£¨³Ù»¹Ò»ÌìµÄ·£¿îÊı£©£º");
+		label_5.setText("ç½šæ¬¾ï¼ˆè¿Ÿè¿˜ä¸€å¤©çš„ç½šæ¬¾æ•°ï¼‰ï¼š");
 		panel_3.add(label_5);
 
-		fakuan = new JTextField("µ¥Î»Îª½Ç");
+		fakuan = new JTextField("å•ä½ä¸ºè§’");
 		fakuan.setColumns(30);
 		  fakuan.addKeyListener(new NumberListener());
 		  
@@ -104,24 +94,24 @@ public class BookTypeAddIFrame extends JInternalFrame {
 		panel_3.add(fakuan);
 
 		final JButton button = new JButton();
-		button.setText("±£´æ");
+		button.setText("ä¿å­˜");
 		button.addActionListener(new ActionListener(){
 			public void actionPerformed(final ActionEvent e) {
 				if(bookTypeName.getText().length()==0){
-					JOptionPane.showMessageDialog(null, "Í¼ÊéÀà±ğÎÄ±¾¿ò²»¿ÉÎª¿Õ");
+					JOptionPane.showMessageDialog(null, "å›¾ä¹¦ç±»åˆ«æ–‡æœ¬æ¡†ä¸å¯ä¸ºç©º");
 					return;
 				}
 				if(days.getText().length()==0){
-					JOptionPane.showMessageDialog(null, "¿É½èÌìÊıÎÄ±¾¿ò²»¿ÉÎª¿Õ");
+					JOptionPane.showMessageDialog(null, "å¯å€Ÿå¤©æ•°æ–‡æœ¬æ¡†ä¸å¯ä¸ºç©º");
 					return;
 				}
-				if(fakuan.getText().length()==0||fakuan.getText().trim().equals("µ¥Î»Îª½Ç")){
-					JOptionPane.showMessageDialog(null, "·£¿îÎÄ±¾¿ò²»¿ÉÎª¿Õ");
+				if(fakuan.getText().length()==0||fakuan.getText().trim().equals("å•ä½ä¸ºè§’")){
+					JOptionPane.showMessageDialog(null, "ç½šæ¬¾æ–‡æœ¬æ¡†ä¸å¯ä¸ºç©º");
 					return;
 				}
 				int i=DbHelper.InsertBookType(bookTypeName.getText().trim(), days.getText().trim(),Double.valueOf(fakuan.getText().trim())/10);
 				if(i==1){
-					JOptionPane.showMessageDialog(null, "Ìí¼Ó³É¹¦£¡");
+					JOptionPane.showMessageDialog(null, "æ·»åŠ æˆåŠŸï¼");
 					doDefaultCloseAction();
 				}
 			}
@@ -129,7 +119,7 @@ public class BookTypeAddIFrame extends JInternalFrame {
 		panel_3.add(button);
 
 		final JButton buttonDel = new JButton();
-		buttonDel.setText("¹Ø±Õ");
+		buttonDel.setText("å…³é—­");
 		buttonDel.addActionListener(new ActionListener(){
 			public void actionPerformed(final ActionEvent e) {
 				doDefaultCloseAction();

@@ -46,7 +46,7 @@ public class BookBackIFrame extends JInternalFrame {
 	private JTextField borrowdays;
 	private JTextField borrowDate;
 	private JTextField readerISBN;
-	private String[] columnNames = { "Í¼ÊéÃû³Æ", "Í¼ÊéÌõĞÎÂë","Í¼ÊéÀà±ğ","¶ÁÕßĞÕÃû","¶ÁÕßÌõĞÎÂë","½èÊéÊ±¼ä","¹é»¹Ê±¼ä" };
+	private String[] columnNames = { "å›¾ä¹¦åç§°", "å›¾ä¹¦æ¡å½¢ç ","å›¾ä¹¦ç±»åˆ«","è¯»è€…å§“å","è¯»è€…æ¡å½¢ç ","å€Ÿä¹¦æ—¶é—´","å½’è¿˜æ—¶é—´" };
 	DefaultTableModel model = new DefaultTableModel();
 	SimpleDateFormat myfmt=new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 	private String bookISBNs=null;
@@ -77,13 +77,13 @@ public class BookBackIFrame extends JInternalFrame {
 	 */
 	public BookBackIFrame() {
 		super();
-		setIconifiable(true);							// ÉèÖÃ´°Ìå¿É×îĞ¡»¯£­£­£­±ØĞë
-		setClosable(true);								// ÉèÖÃ´°Ìå¿É¹Ø±Õ£­£­£­±ØĞë
-		setTitle("Í¼Êé¹é»¹¹ÜÀí");
+		setIconifiable(true);							// è®¾ç½®çª—ä½“å¯æœ€å°åŒ–ï¼ï¼ï¼å¿…é¡»
+		setClosable(true);								// è®¾ç½®çª—ä½“å¯å…³é—­ï¼ï¼ï¼å¿…é¡»
+		setTitle("å›¾ä¹¦å½’è¿˜ç®¡ç†");
 		setBounds(100, 100, 550, 650);
 
 		final JPanel panel = new JPanel();
-		panel.setBorder(new TitledBorder(null, "»ù±¾ĞÅÏ¢", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, null));
+		panel.setBorder(new TitledBorder(null, "åŸºæœ¬ä¿¡æ¯", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, null));
 		panel.setPreferredSize(new Dimension(0, 200));
 		getContentPane().add(panel, BorderLayout.NORTH);
 
@@ -95,7 +95,7 @@ public class BookBackIFrame extends JInternalFrame {
 		panel.add(panel_5);
 
 		final JLabel label_4 = new JLabel();
-		label_4.setText("¶ÁÕß±àºÅ£º");
+		label_4.setText("è¯»è€…ç¼–å·ï¼š");
 		panel_5.add(label_4);
 
 		readerISBN = new JTextField();
@@ -126,12 +126,12 @@ public class BookBackIFrame extends JInternalFrame {
 		final GridLayout gridLayout_2 = new GridLayout(0, 2);
 		gridLayout_2.setVgap(20);
 		panel_2.setLayout(gridLayout_2);
-		panel_2.setBorder(new TitledBorder(null, "·£¿îĞÅÏ¢", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, null));
+		panel_2.setBorder(new TitledBorder(null, "ç½šæ¬¾ä¿¡æ¯", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, null));
 		panel_2.setPreferredSize(new Dimension(250, 230));
 		panel_1.add(panel_2);
 
 		final JLabel label_11 = new JLabel();
-		label_11.setText("½èÊéÈÕÆÚ£º");
+		label_11.setText("å€Ÿä¹¦æ—¥æœŸï¼š");
 		panel_2.add(label_11);
 
 		borrowDate = new JTextField();
@@ -140,7 +140,7 @@ public class BookBackIFrame extends JInternalFrame {
 		panel_2.add(borrowDate);
 
 		final JLabel label_12 = new JLabel();
-		label_12.setText("¹æ¶¨ÌìÊı£º");
+		label_12.setText("è§„å®šå¤©æ•°ï¼š");
 		panel_2.add(label_12);
 
 		borrowdays = new JTextField();
@@ -148,7 +148,7 @@ public class BookBackIFrame extends JInternalFrame {
 		panel_2.add(borrowdays);
 
 		final JLabel label_13 = new JLabel();
-		label_13.setText("Êµ¼ÊÌìÊı£º");
+		label_13.setText("å®é™…å¤©æ•°ï¼š");
 		panel_2.add(label_13);
 
 		realdays = new JTextField();
@@ -156,7 +156,7 @@ public class BookBackIFrame extends JInternalFrame {
 		panel_2.add(realdays);
 
 		final JLabel label_14 = new JLabel();
-		label_14.setText("³¬³öÌìÊı£º");
+		label_14.setText("è¶…å‡ºå¤©æ•°ï¼š");
 		panel_2.add(label_14);
 
 		ccdays = new JTextField();
@@ -164,7 +164,7 @@ public class BookBackIFrame extends JInternalFrame {
 		panel_2.add(ccdays);
 
 		final JLabel label_15 = new JLabel();
-		label_15.setText("·£¿î½ğ¶î£º");
+		label_15.setText("ç½šæ¬¾é‡‘é¢ï¼š");
 		panel_2.add(label_15);
 
 		fkmoney = new JTextField();
@@ -172,7 +172,7 @@ public class BookBackIFrame extends JInternalFrame {
 		panel_2.add(fkmoney);
 
 		final JPanel panel_3 = new JPanel();
-		panel_3.setBorder(new TitledBorder(null, "ÏµÍ³ĞÅÏ¢", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, null));
+		panel_3.setBorder(new TitledBorder(null, "ç³»ç»Ÿä¿¡æ¯", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, null));
 		panel_3.setPreferredSize(new Dimension(280, 230));
 		panel_1.add(panel_3);
 
@@ -184,7 +184,7 @@ public class BookBackIFrame extends JInternalFrame {
 		panel_3.add(panel_7);
 
 		final JLabel label_10_1 = new JLabel();
-		label_10_1.setText("µ±Ç°Ê±¼ä£º");
+		label_10_1.setText("å½“å‰æ—¶é—´ï¼š");
 		panel_7.add(label_10_1);
 
 		todaydate = new JTextField();
@@ -195,7 +195,7 @@ public class BookBackIFrame extends JInternalFrame {
 		panel_7.add(todaydate);
 
 		final JLabel label_11_1 = new JLabel();
-		label_11_1.setText("²Ù×÷Ô±£º");
+		label_11_1.setText("æ“ä½œå‘˜ï¼š");
 		panel_7.add(label_11_1);
 
 		operator  =new JTextField(user.getName());
@@ -203,7 +203,7 @@ public class BookBackIFrame extends JInternalFrame {
 		panel_7.add(operator);
 
 		final JButton buttonback = new JButton();
-		buttonback.setText("Í¼Êé¹é»¹");
+		buttonback.setText("å›¾ä¹¦å½’è¿˜");
 		buttonback.addActionListener(new BookBackActionListener(model));
 		panel_3.add(buttonback);
 
@@ -211,7 +211,7 @@ public class BookBackIFrame extends JInternalFrame {
 
 
 		final JButton buttonExit= new JButton();
-		buttonExit.setText("ÍË³ö");
+		buttonExit.setText("é€€å‡º");
 		buttonExit.addActionListener(new CloseActionListener());
 		panel_3.add(buttonExit);
 		setVisible(true);
@@ -219,7 +219,7 @@ public class BookBackIFrame extends JInternalFrame {
 	}
 	class readerISBNListenerlostFocus extends KeyAdapter{
 		public void keyTyped(KeyEvent e) {
-			if (e.getKeyChar() == '\n') { // ÅĞ¶ÏÔÚÎÄ±¾¿òÊÇ·ñÊäÈë»Ø³µ¡£
+			if (e.getKeyChar() == '\n') { // åˆ¤æ–­åœ¨æ–‡æœ¬æ¡†æ˜¯å¦è¾“å…¥å›è½¦ã€‚
 				add();
 			}
 		}
@@ -256,10 +256,10 @@ public class BookBackIFrame extends JInternalFrame {
 			if(days3>0){
 				ccdays.setText(days3+"");
 				Double zfk=Double.valueOf(fk)*days3;
-				fkmoney.setText(zfk+"Ôª");
+				fkmoney.setText(zfk+"å…ƒ");
 			}
 			else{
-				ccdays.setText("Ã»ÓĞ³¬¹ı¹æ¶¨ÌìÊı");
+				ccdays.setText("æ²¡æœ‰è¶…è¿‡è§„å®šå¤©æ•°");
 				fkmoney.setText("0");
 			}
 			bookISBNs=table.getValueAt(selRow, 1).toString().trim();
@@ -272,15 +272,15 @@ public class BookBackIFrame extends JInternalFrame {
 			this.model = model;
 		}
 		public void actionPerformed(ActionEvent e) {
-			// TODO ×Ô¶¯Éú³É·½·¨´æ¸ù
+			// TODO è‡ªåŠ¨ç”Ÿæˆæ–¹æ³•å­˜æ ¹
 			if(readerISBNs==null){
-				JOptionPane.showMessageDialog(null, "ÇëÊäÈë¶ÁÕß±àºÅ£¡");
+				JOptionPane.showMessageDialog(null, "è¯·è¾“å…¥è¯»è€…ç¼–å·ï¼");
 				return;
 			}
 			System.out.println(bookISBNs==null);
 
 			if(table.getSelectedRow()==-1){
-				JOptionPane.showMessageDialog(null, "ÇëÑ¡ÔñËùÒª¹é»¹µÄÍ¼Êé£¡");
+				JOptionPane.showMessageDialog(null, "è¯·é€‰æ‹©æ‰€è¦å½’è¿˜çš„å›¾ä¹¦ï¼");
 				return;	
 			}
 
@@ -290,11 +290,11 @@ public class BookBackIFrame extends JInternalFrame {
 			 if(i==1){	
 				int selectedRow = table.getSelectedRow();
 				model.removeRow(selectedRow);
-				JOptionPane.showMessageDialog(null, "»¹Êé²Ù×÷Íê³É£¡");		
+				JOptionPane.showMessageDialog(null, "è¿˜ä¹¦æ“ä½œå®Œæˆï¼");		
 			}
 		}
 	}
-	class CloseActionListener implements ActionListener {			// Ìí¼Ó¹Ø±Õ°´Å¥µÄÊÂ¼ş¼àÌıÆ÷
+	class CloseActionListener implements ActionListener {			// æ·»åŠ å…³é—­æŒ‰é’®çš„äº‹ä»¶ç›‘å¬å™¨
 		public void actionPerformed(final ActionEvent e) {
 			doDefaultCloseAction();
 		}

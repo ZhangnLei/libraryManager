@@ -1,40 +1,21 @@
 package pers.airobot.iframe;
 
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.FocusAdapter;
-import java.awt.event.FocusEvent;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.text.SimpleDateFormat;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.swing.ButtonGroup;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JFormattedTextField;
-import javax.swing.JInternalFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JRadioButton;
-import javax.swing.JTextField;
-import javax.swing.border.TitledBorder;
-import javax.swing.table.DefaultTableModel;
-
 import pers.airobot.DbHelper.DbHelper;
 import pers.airobot.model.BookInfo;
 import pers.airobot.model.BookType;
 import pers.airobot.model.Operater;
 import pers.airobot.util.Item;
 import pers.airobot.util.MyDocument;
+
+import javax.swing.*;
+import javax.swing.border.TitledBorder;
+import javax.swing.table.DefaultTableModel;
+import java.awt.*;
+import java.awt.event.*;
+import java.text.SimpleDateFormat;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class newBookOrderIFrame extends JInternalFrame {
 
@@ -66,7 +47,7 @@ public class newBookOrderIFrame extends JInternalFrame {
 	 */
 	public newBookOrderIFrame() {
 		super();
-		setTitle("ĞÂÊé¶©¹º¹ÜÀí");
+		setTitle("æ–°ä¹¦è®¢è´­ç®¡ç†");
 		setIconifiable(true);
 		setClosable(true);
 		setBounds(100, 100, 500, 320);
@@ -77,7 +58,7 @@ public class newBookOrderIFrame extends JInternalFrame {
 		getContentPane().add(panel);
 
 		final JPanel panel_4 = new JPanel();
-		panel_4.setBorder(new TitledBorder(null, "¶©¹ºĞÅÏ¢", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, null));
+		panel_4.setBorder(new TitledBorder(null, "è®¢è´­ä¿¡æ¯", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, null));
 		panel_4.setPreferredSize(new Dimension(480, 120));
 		final GridLayout gridLayout_1 = new GridLayout(0, 4);
 		gridLayout_1.setVgap(8);
@@ -86,7 +67,7 @@ public class newBookOrderIFrame extends JInternalFrame {
 
 		final JLabel label_1 = new JLabel();
 		panel_4.add(label_1);
-		label_1.setText("¶©¹ºÈÕÆÚ£º");
+		label_1.setText("è®¢è´­æ—¥æœŸï¼š");
 
 		SimpleDateFormat myfmt=new SimpleDateFormat("yyyy-MM-dd");
 		orderDate = new JFormattedTextField(myfmt);
@@ -96,7 +77,7 @@ public class newBookOrderIFrame extends JInternalFrame {
 
 		final JLabel label_4 = new JLabel();
 		panel_4.add(label_4);
-		label_4.setText("¶©¹ºÊıÁ¿£º");
+		label_4.setText("è®¢è´­æ•°é‡ï¼š");
 
 		orderNumber = new JTextField();
 		panel_4.add(orderNumber);
@@ -104,14 +85,14 @@ public class newBookOrderIFrame extends JInternalFrame {
 		orderNumber.addKeyListener(new NumberListener());
 		final JLabel label_5 = new JLabel();
 		panel_4.add(label_5);
-		label_5.setText("²Ù×÷Ô±£º");
+		label_5.setText("æ“ä½œå‘˜ï¼š");
 		operator  =new JTextField(user.getName());
 		panel_4.add(operator);
 		
 		operator.setEditable(false);
 		final JLabel label_9 = new JLabel();
 		panel_4.add(label_9);
-		label_9.setText("ÊÇ·ñÑéÊÕ£º");
+		label_9.setText("æ˜¯å¦éªŒæ”¶ï¼š");
 
 		final JPanel panel_3 = new JPanel();
 		panel_4.add(panel_3);
@@ -123,17 +104,17 @@ public class newBookOrderIFrame extends JInternalFrame {
 		});
 		buttonGroup.add(radioButton1);
 		panel_3.add(radioButton1);
-		radioButton1.setText("ÊÇ");
+		radioButton1.setText("æ˜¯");
 
 		radioButton2 = new JRadioButton();
 		radioButton2.setSelected(true);
 		buttonGroup.add(radioButton2);
 		panel_3.add(radioButton2);
-		radioButton2.setText("·ñ");
+		radioButton2.setText("å¦");
 
 		final JLabel label = new JLabel();
 		panel_4.add(label);
-		label.setText("ÕÛ¿Û£º");
+		label.setText("æŠ˜æ‰£ï¼š");
 
 		zk = new JTextField();
 		zk.setDocument(new MyDocument(1));
@@ -142,7 +123,7 @@ public class newBookOrderIFrame extends JInternalFrame {
 
 
 		final JPanel panel_1 = new JPanel();
-		panel_1.setBorder(new TitledBorder(null, "Í¼ÊéĞÅÏ¢", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, null));
+		panel_1.setBorder(new TitledBorder(null, "å›¾ä¹¦ä¿¡æ¯", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, null));
 		final GridLayout gridLayout = new GridLayout(0, 4);
 		gridLayout.setVgap(5);
 		panel_1.setLayout(gridLayout);
@@ -150,7 +131,7 @@ public class newBookOrderIFrame extends JInternalFrame {
 		getContentPane().add(panel_1, BorderLayout.NORTH);
 
 		final JLabel label_3 = new JLabel();
-		label_3.setText("Êé¼®±àºÅ£º");
+		label_3.setText("ä¹¦ç±ç¼–å·ï¼š");
 		panel_1.add(label_3);
 
 		ISBN = new JTextField();
@@ -160,14 +141,14 @@ public class newBookOrderIFrame extends JInternalFrame {
 		panel_1.add(ISBN);
 
 		final JLabel label_2 = new JLabel();
-		label_2.setText("Í¼ÊéÃû³Æ£º");
+		label_2.setText("å›¾ä¹¦åç§°ï¼š");
 		panel_1.add(label_2);
 
 		bookName = new JTextField();
 		panel_1.add(bookName);
 
 		final JLabel label_6 = new JLabel();
-		label_6.setText("Í¼ÊéÀà±ğ£º");
+		label_6.setText("å›¾ä¹¦ç±»åˆ«ï¼š");
 		panel_1.add(label_6);
 
 		bookType = new JComboBox<Item>();
@@ -175,14 +156,14 @@ public class newBookOrderIFrame extends JInternalFrame {
 		panel_1.add(bookType);
 
 		final JLabel label_8 = new JLabel();
-		label_8.setText("³ö°æÉç£º");
+		label_8.setText("å‡ºç‰ˆç¤¾ï¼š");
 		panel_1.add(label_8);
 		cbs = new JComboBox();
 		cbsModel=(DefaultComboBoxModel<?>)cbs.getModel();
 		panel_1.add(cbs);
 
 		final JLabel label_7 = new JLabel();
-		label_7.setText("Í¼Êé¼Û¸ñ£º");
+		label_7.setText("å›¾ä¹¦ä»·æ ¼ï¼š");
 		panel_1.add(label_7);
 
 		price = new JTextField();
@@ -192,7 +173,7 @@ public class newBookOrderIFrame extends JInternalFrame {
 
 		
 		map=new HashMap<String, Item>();
-		//´ÓÊı¾İ¿âÖĞÈ¡³öÍ¼ÊéÀà±ğ
+		//ä»æ•°æ®åº“ä¸­å–å‡ºå›¾ä¹¦ç±»åˆ«
 		List<?> list=DbHelper.selectBookCategory();
 		for(int i=0;i<list.size();i++){
 			BookType booktype=(BookType)list.get(i);
@@ -203,7 +184,7 @@ public class newBookOrderIFrame extends JInternalFrame {
 			map.put(item.getId(), item);
 			
 		}
-		String[] array=new String[]{"***³ö°æÉç","**ĞÅÏ¢³ö°æÉç","**´óĞÍ³ö°æÉç","***Ğ¡ĞÍ³ö°æÉç"};
+		String[] array=new String[]{"***å‡ºç‰ˆç¤¾","**ä¿¡æ¯å‡ºç‰ˆç¤¾","**å¤§å‹å‡ºç‰ˆç¤¾","***å°å‹å‡ºç‰ˆç¤¾"};
 		cbs.setModel(new DefaultComboBoxModel(array));
 
 		final JPanel panel_2 = new JPanel();
@@ -211,12 +192,12 @@ public class newBookOrderIFrame extends JInternalFrame {
 		getContentPane().add(panel_2, BorderLayout.SOUTH);
 
 		final JButton buttonAdd = new JButton();
-		buttonAdd.setText("Ìí¼Ó");
+		buttonAdd.setText("æ·»åŠ ");
 		buttonAdd.addActionListener(new ButtonAddLisenter());
 		panel_2.add(buttonAdd);
 
 		final JButton ButtonExit = new JButton();
-		ButtonExit.setText("ÍË³ö");
+		ButtonExit.setText("é€€å‡º");
 		ButtonExit.addActionListener(new CloseActionListener());
 		panel_2.add(ButtonExit);
 		setVisible(true);
@@ -225,28 +206,28 @@ public class newBookOrderIFrame extends JInternalFrame {
 	class ButtonAddLisenter implements ActionListener{
 		public void actionPerformed(final ActionEvent e) {
 			if(orderDate.getText().isEmpty()){
-				JOptionPane.showMessageDialog(null, "¶©ÊéÈÕÆÚÎÄ±¾¿ò²»¿ÉÎª¿Õ");
+				JOptionPane.showMessageDialog(null, "è®¢ä¹¦æ—¥æœŸæ–‡æœ¬æ¡†ä¸å¯ä¸ºç©º");
 				return;
 			}
 			if(ISBN.getText().isEmpty()){
-				JOptionPane.showMessageDialog(null, "Í¼Êé±àºÅÎÄ±¾¿ò²»¿ÉÎª¿Õ");
+				JOptionPane.showMessageDialog(null, "å›¾ä¹¦ç¼–å·æ–‡æœ¬æ¡†ä¸å¯ä¸ºç©º");
 				return;
 			}
 			if(orderNumber.getText().isEmpty()){
-				JOptionPane.showMessageDialog(null, "¶©ÊéÊıÁ¿ÎÄ±¾¿ò²»¿ÉÎª¿Õ");
+				JOptionPane.showMessageDialog(null, "è®¢ä¹¦æ•°é‡æ–‡æœ¬æ¡†ä¸å¯ä¸ºç©º");
 				return;
 			}
 			if(operator.getText().isEmpty()){
-				JOptionPane.showMessageDialog(null, "²Ù×÷Ô±ÎÄ±¾¿ò²»¿ÉÎª¿Õ");
+				JOptionPane.showMessageDialog(null, "æ“ä½œå‘˜æ–‡æœ¬æ¡†ä¸å¯ä¸ºç©º");
 				return;
 			}
 			
 			if(price.getText().isEmpty()){
-				JOptionPane.showMessageDialog(null, "¼Û¸ñÎÄ±¾¿ò²»¿ÉÎª¿Õ");
+				JOptionPane.showMessageDialog(null, "ä»·æ ¼æ–‡æœ¬æ¡†ä¸å¯ä¸ºç©º");
 				return;
 			}
 			if(!DbHelper.selectBookOrder(ISBN.getText().trim()).isEmpty()){
-				JOptionPane.showMessageDialog(null, "Ìí¼ÓÊéºÅÖØ¸´£¡");
+				JOptionPane.showMessageDialog(null, "æ·»åŠ ä¹¦å·é‡å¤ï¼");
 				return;
 			}
 			
@@ -262,7 +243,7 @@ public class newBookOrderIFrame extends JInternalFrame {
 				int i=DbHelper.InsertBookOrder(ISBN.getText().trim(), java.sql.Date.valueOf(orderDate.getText().trim()), orderNumber.getText().trim(), operator.getText().trim(), checkAndAccept,zks);
 				System.out.println(i);
 				if(i==1){
-					JOptionPane.showMessageDialog(null, "Ìí¼Ó³É¹¦£¡");
+					JOptionPane.showMessageDialog(null, "æ·»åŠ æˆåŠŸï¼");
 				}
 			}catch(Exception ex){
 				System.out.println(ex.getMessage());
@@ -272,7 +253,7 @@ public class newBookOrderIFrame extends JInternalFrame {
 	class DateListener extends KeyAdapter {
 		public void keyTyped(KeyEvent e) {
 			if(orderDate.getText().isEmpty()){
-				JOptionPane.showMessageDialog(null, "Ê±¼ä¸ñÊ½ÇëÊ¹ÓÃ\"2007-05-10\"¸ñÊ½");
+				JOptionPane.showMessageDialog(null, "æ—¶é—´æ ¼å¼è¯·ä½¿ç”¨\"2007-05-10\"æ ¼å¼");
 			}
 		}
 	}
@@ -284,9 +265,9 @@ public class newBookOrderIFrame extends JInternalFrame {
 			}
 		}
 	}
-	class ISBNListener extends KeyAdapter {//Ê¹ÓÃ»Ø³µ¼ü½øĞĞ´¥·¢ÊÂ¼ş·½·¨
+	class ISBNListener extends KeyAdapter {//ä½¿ç”¨å›è½¦é”®è¿›è¡Œè§¦å‘äº‹ä»¶æ–¹æ³•
 		public void keyTyped(KeyEvent e) {
-			if (e.getKeyChar() == '\n') { // ÅĞ¶ÏÔÚÎÄ±¾¿òÊÇ·ñÊäÈë»Ø³µ¡£
+			if (e.getKeyChar() == '\n') { // åˆ¤æ–­åœ¨æ–‡æœ¬æ¡†æ˜¯å¦è¾“å…¥å›è½¦ã€‚
 				String ISBNs = ISBN.getText().trim();
 				List<?> list = DbHelper.selectBookInfo(ISBNs);
 				System.out.println(list.isEmpty());
@@ -308,7 +289,7 @@ public class newBookOrderIFrame extends JInternalFrame {
 		public void focusLost(FocusEvent e){
 			String ISBNs = ISBN.getText().trim();
 			if(!DbHelper.selectBookOrder(ISBN.getText().trim()).isEmpty()){
-				JOptionPane.showMessageDialog(null, "ÒÑ¾­Îª´Ë±àºÅÍ¼ÊéÌí¼Ó¶©¹ºĞÅÏ¢£¬ÇëÊäÈëÆäËûÍ¼Êé±àºÅ£¡");
+				JOptionPane.showMessageDialog(null, "å·²ç»ä¸ºæ­¤ç¼–å·å›¾ä¹¦æ·»åŠ è®¢è´­ä¿¡æ¯ï¼Œè¯·è¾“å…¥å…¶ä»–å›¾ä¹¦ç¼–å·ï¼");
 				ISBN.setText("");
 				bookName.setText("");
 				price.setText("");
@@ -319,7 +300,7 @@ public class newBookOrderIFrame extends JInternalFrame {
 				ISBN.setText("");
 				bookName.setText("");
 				price.setText("");
-				JOptionPane.showMessageDialog(null, "Í¼ÊéĞÅÏ¢±íÖĞÎŞ´ËÊéºÅ£¬ÇëÄúÊ×ÏÈµ½»ù´¡Êı¾İÎ¬»¤ÖĞ½øĞĞÍ¼ÊéĞÅÏ¢Ìí¼Ó²Ù×÷");
+				JOptionPane.showMessageDialog(null, "å›¾ä¹¦ä¿¡æ¯è¡¨ä¸­æ— æ­¤ä¹¦å·ï¼Œè¯·æ‚¨é¦–å…ˆåˆ°åŸºç¡€æ•°æ®ç»´æŠ¤ä¸­è¿›è¡Œå›¾ä¹¦ä¿¡æ¯æ·»åŠ æ“ä½œ");
 			}
 			for (int i = 0; i < list.size(); i++) {
 				BookInfo bookinfo = (BookInfo) list.get(i);
@@ -331,7 +312,7 @@ public class newBookOrderIFrame extends JInternalFrame {
 			}
 		}
 	}
-	class CloseActionListener implements ActionListener {			// Ìí¼Ó¹Ø±Õ°´Å¥µÄÊÂ¼ş¼àÌıÆ÷
+	class CloseActionListener implements ActionListener {			// æ·»åŠ å…³é—­æŒ‰é’®çš„äº‹ä»¶ç›‘å¬å™¨
 		public void actionPerformed(final ActionEvent e) {
 			doDefaultCloseAction();
 		}

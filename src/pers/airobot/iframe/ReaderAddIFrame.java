@@ -1,33 +1,17 @@
 package pers.airobot.iframe;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
+import pers.airobot.DbHelper.DbHelper;
+import pers.airobot.util.CreatecdIcon;
+import pers.airobot.util.MyDocument;
+
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
-
-import javax.swing.ButtonGroup;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JFormattedTextField;
-import javax.swing.JInternalFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JRadioButton;
-import javax.swing.JTextField;
-
-import pers.airobot.DbHelper.DbHelper;
-import pers.airobot.util.CreatecdIcon;
-import pers.airobot.util.MyDocument;
 
 public class ReaderAddIFrame extends JInternalFrame {
 
@@ -57,10 +41,10 @@ public class ReaderAddIFrame extends JInternalFrame {
 	 */
 	public ReaderAddIFrame() {
 		super();
-		setTitle("¶ÁÕßÏà¹ØĞÅÏ¢Ìí¼Ó");
-		setIconifiable(true);							// ÉèÖÃ´°Ìå¿É×îĞ¡»¯£­£­£­±ØĞë
-		setClosable(true);								// ÉèÖÃ´°Ìå¿É¹Ø±Õ£­£­£­±ØĞë
-														// ÉèÖÃ´°Ìå±êÌâ£­£­£­±ØĞë
+		setTitle("è¯»è€…ç›¸å…³ä¿¡æ¯æ·»åŠ ");
+		setIconifiable(true);							// è®¾ç½®çª—ä½“å¯æœ€å°åŒ–ï¼ï¼ï¼å¿…é¡»
+		setClosable(true);								// è®¾ç½®çª—ä½“å¯å…³é—­ï¼ï¼ï¼å¿…é¡»
+														// è®¾ç½®çª—ä½“æ ‡é¢˜ï¼ï¼ï¼å¿…é¡»
 		setBounds(100, 100, 500, 350);
 
 		final JLabel logoLabel = new JLabel();
@@ -84,7 +68,7 @@ public class ReaderAddIFrame extends JInternalFrame {
 		panel.add(panel_1);
 
 		final JLabel label_2 = new JLabel();
-		label_2.setText("ĞÕ    Ãû£º");
+		label_2.setText("å§“    åï¼š");
 		panel_1.add(label_2);
 
 		readername = new JTextField();
@@ -92,7 +76,7 @@ public class ReaderAddIFrame extends JInternalFrame {
 		panel_1.add(readername);
 
 		final JLabel label_3 = new JLabel();
-		label_3.setText("ĞÔ    ±ğ£º");
+		label_3.setText("æ€§    åˆ«ï¼š");
 		panel_1.add(label_3);
 
 		final JPanel label_13 = new JPanel();
@@ -106,26 +90,26 @@ public class ReaderAddIFrame extends JInternalFrame {
 		label_13.add(radioButton1);
 		radioButton1.setSelected(true);
 		buttonGroup.add(radioButton1);
-		radioButton1.setText("ÄĞ");
+		radioButton1.setText("ç”·");
 
 		final JRadioButton radioButton2 = new JRadioButton();
 		label_13.add(radioButton2);
 		buttonGroup.add(radioButton2);
-		radioButton2.setText("Å®");
+		radioButton2.setText("å¥³");
 		
 
 
 		final JLabel label_4 = new JLabel();
-		label_4.setText("Äê    Áä£º");
+		label_4.setText("å¹´    é¾„ï¼š");
 		panel_1.add(label_4);
 
 		age = new JTextField();
-		age.setDocument(new MyDocument(2));//ÉèÖÃÊéºÅÎÄ±¾¿ò×î´óÊäÈëÖµÎª2
+		age.setDocument(new MyDocument(2));//è®¾ç½®ä¹¦å·æ–‡æœ¬æ¡†æœ€å¤§è¾“å…¥å€¼ä¸º2
 		age.addKeyListener(new NumberListener());
 		panel_1.add(age);
 
 		final JLabel label_5 = new JLabel();
-		label_5.setText("Ö°    Òµ£º");
+		label_5.setText("èŒ    ä¸šï¼š");
 		panel_1.add(label_5);
 
 		zy = new JTextField();
@@ -133,12 +117,12 @@ public class ReaderAddIFrame extends JInternalFrame {
 		panel_1.add(zy);
 
 		final JLabel label_6 = new JLabel();
-		label_6.setText("ÓĞĞ§Ö¤¼ş£º");
+		label_6.setText("æœ‰æ•ˆè¯ä»¶ï¼š");
 		panel_1.add(label_6);
 
 		comboBox = new JComboBox();
 		//comboBoxModel=(DefaultComboBoxModel)comboBox.getModel();
-		array=new String[]{"Éí·İÖ¤","¾üÈËÖ¤","Ñ§ÉúÖ¤","¹¤×÷Ö¤"};
+		array=new String[]{"èº«ä»½è¯","å†›äººè¯","å­¦ç”Ÿè¯","å·¥ä½œè¯"};
 		comboBox.setModel(new DefaultComboBoxModel(array));
 		for(int i=1;i<array.length;i++){
 			comboBox.setSelectedIndex(i);
@@ -153,7 +137,7 @@ public class ReaderAddIFrame extends JInternalFrame {
 		panel_1.add(comboBox);
 
 		final JLabel label_7 = new JLabel();
-		label_7.setText("Ö¤¼şºÅÂë£º");
+		label_7.setText("è¯ä»¶å·ç ï¼š");
 		panel_1.add(label_7);
 
 		zjnumber = new JTextField();
@@ -164,7 +148,7 @@ public class ReaderAddIFrame extends JInternalFrame {
 
 
 		final JLabel label_9 = new JLabel();
-		label_9.setText("×î´ó½èÊéÁ¿£º");
+		label_9.setText("æœ€å¤§å€Ÿä¹¦é‡ï¼š");
 		panel_1.add(label_9);
 		
 		maxnumber = new JFormattedTextField();
@@ -173,7 +157,7 @@ public class ReaderAddIFrame extends JInternalFrame {
 		panel_1.add(maxnumber);
 
 		final JLabel label_10 = new JLabel();
-		label_10.setText("»áÔ±Ö¤ÓĞĞ§ÈÕÆÚ£º");
+		label_10.setText("ä¼šå‘˜è¯æœ‰æ•ˆæ—¥æœŸï¼š");
 		panel_1.add(label_10);
 
 		SimpleDateFormat myfmt=new SimpleDateFormat("yyyy-MM-dd");
@@ -186,7 +170,7 @@ public class ReaderAddIFrame extends JInternalFrame {
 		panel_1.add(date);
 
 		final JLabel label_11 = new JLabel();
-		label_11.setText("µç    »°£º");
+		label_11.setText("ç”µ    è¯ï¼š");
 		panel_1.add(label_11);
 		
 
@@ -197,13 +181,13 @@ public class ReaderAddIFrame extends JInternalFrame {
 		panel_1.add(tel);
 
 		final JLabel label_12 = new JLabel();
-		label_12.setText("Ñº    ½ğ£º");
+		label_12.setText("æŠ¼    é‡‘ï¼š");
 		panel_1.add(label_12);
 		
 		keepmoney = new JFormattedTextField();
 		keepmoney.addKeyListener(new KeyAdapter() {
 			public void keyTyped(KeyEvent e) {
-				String numStr="0123456789"+(char)8;//Ö»ÔÊĞíÊäÈëÊı×ÖÓëÍË¸ñ¼ü
+				String numStr="0123456789"+(char)8;//åªå…è®¸è¾“å…¥æ•°å­—ä¸é€€æ ¼é”®
 				if(numStr.indexOf(e.getKeyChar())<0){
 					e.consume();
 				}
@@ -215,7 +199,7 @@ public class ReaderAddIFrame extends JInternalFrame {
 		panel_1.add(keepmoney);
 
 		final JLabel label = new JLabel();
-		label.setText("°ìÖ¤ÈÕÆÚ£º");
+		label.setText("åŠè¯æ—¥æœŸï¼š");
 		panel_1.add(label);
 
 		
@@ -225,7 +209,7 @@ public class ReaderAddIFrame extends JInternalFrame {
 		panel_1.add(bztime);
 
 		final JLabel label_1 = new JLabel();
-		label_1.setText("¶ÁÕß±àºÅ£º");
+		label_1.setText("è¯»è€…ç¼–å·ï¼š");
 		panel_1.add(label_1);
 
 		ISBN = new JTextField();
@@ -238,13 +222,13 @@ public class ReaderAddIFrame extends JInternalFrame {
 
 		final JButton save = new JButton();
 		panel_2.add(save);
-		save.setText("±£´æ");
+		save.setText("ä¿å­˜");
 		save.addActionListener(new ButtonAddListener(radioButton1));
 		
 
 		final JButton back = new JButton();
 		panel_2.add(back);
-		back.setText("·µ»Ø");
+		back.setText("è¿”å›");
 		back.addActionListener(new CloseActionListener());
 		setVisible(true);
 		//
@@ -252,7 +236,7 @@ public class ReaderAddIFrame extends JInternalFrame {
 	class DateListener extends KeyAdapter {
 		public void keyTyped(KeyEvent e) {
 			if(bztime.getText().isEmpty()){
-				JOptionPane.showMessageDialog(null, "Ê±¼ä¸ñÊ½ÇëÊ¹ÓÃ\"2007-05-10\"¸ñÊ½");
+				JOptionPane.showMessageDialog(null, "æ—¶é—´æ ¼å¼è¯·ä½¿ç”¨\"2007-05-10\"æ ¼å¼");
 			}
 		}
 	}
@@ -274,60 +258,60 @@ public class ReaderAddIFrame extends JInternalFrame {
 		public void actionPerformed(final ActionEvent e) {
 			
 			if(readername.getText().length()==0){
-				JOptionPane.showMessageDialog(null, "¶ÁÕßĞÕÃûÎÄ±¾¿ò²»¿ÉÎª¿Õ");
+				JOptionPane.showMessageDialog(null, "è¯»è€…å§“åæ–‡æœ¬æ¡†ä¸å¯ä¸ºç©º");
 				return;
 			}
 			if(age.getText().length()==0){
-				JOptionPane.showMessageDialog(null, "¶ÁÕßÄêÁäÎÄ±¾¿ò²»¿ÉÎª¿Õ");
+				JOptionPane.showMessageDialog(null, "è¯»è€…å¹´é¾„æ–‡æœ¬æ¡†ä¸å¯ä¸ºç©º");
 				return;
 			}
 			
 			if(zjnumber.getText().length()==0){
-				JOptionPane.showMessageDialog(null, "Ö¤¼şºÅÂëÎÄ±¾¿ò²»¿ÉÎª¿Õ");
+				JOptionPane.showMessageDialog(null, "è¯ä»¶å·ç æ–‡æœ¬æ¡†ä¸å¯ä¸ºç©º");
 				return;
 			}
 			if(zjnumber.getText().length()!=13){
-				JOptionPane.showMessageDialog(null, "Ö¤¼şºÅÂëÎ»ÊıÎª13");
+				JOptionPane.showMessageDialog(null, "è¯ä»¶å·ç ä½æ•°ä¸º13");
 				return;
 			}
 			if(keepmoney.getText().length()==0){
-				JOptionPane.showMessageDialog(null, "Ñº½ğÎÄ±¾¿ò²»¿ÉÎª¿Õ");
+				JOptionPane.showMessageDialog(null, "æŠ¼é‡‘æ–‡æœ¬æ¡†ä¸å¯ä¸ºç©º");
 				return;
 			}
 			if(zy.getText().length()==0){
-				JOptionPane.showMessageDialog(null, "Ö°ÒµÎÄ±¾¿ò²»¿ÉÎª¿Õ");
+				JOptionPane.showMessageDialog(null, "èŒä¸šæ–‡æœ¬æ¡†ä¸å¯ä¸ºç©º");
 				return;
 			}
 			if(zy.getText().length()>20){
-				JOptionPane.showMessageDialog(null, "Ö°ÒµÎÄ±¾¿òÎ»ÊıÎª20");
+				JOptionPane.showMessageDialog(null, "èŒä¸šæ–‡æœ¬æ¡†ä½æ•°ä¸º20");
 				return;
 			}
 			if(ISBN.getText().length()==0){
-				JOptionPane.showMessageDialog(null, "¶ÁÕßÌõĞÎÂëÎÄ±¾¿ò²»¿ÉÎª¿Õ");
+				JOptionPane.showMessageDialog(null, "è¯»è€…æ¡å½¢ç æ–‡æœ¬æ¡†ä¸å¯ä¸ºç©º");
 				return;
 			}
 			if(ISBN.getText().length()!=13){
-				JOptionPane.showMessageDialog(null, "¶ÁÕßÌõĞÎÂëÎÄ±¾¿òÎª13Î»");
+				JOptionPane.showMessageDialog(null, "è¯»è€…æ¡å½¢ç æ–‡æœ¬æ¡†ä¸º13ä½");
 				return;
 			}
 			if(tel.getText().length()==0){
-				JOptionPane.showMessageDialog(null, "µç»°ºÅÂëÎÄ±¾¿ò²»¿ÉÎª¿Õ");
+				JOptionPane.showMessageDialog(null, "ç”µè¯å·ç æ–‡æœ¬æ¡†ä¸å¯ä¸ºç©º");
 				return;
 			}
 			if(tel.getText().length()>11||tel.getText().length()<0){
-				JOptionPane.showMessageDialog(null, "µç»°ºÅÂëÎ»ÊıĞ¡ÓÚ11Î»");
+				JOptionPane.showMessageDialog(null, "ç”µè¯å·ç ä½æ•°å°äº11ä½");
 				return;
 			}
 			if(maxnumber.getText().length()==0){
-				JOptionPane.showMessageDialog(null, "×î´ó½èÊéÁ¿ÎÄ±¾¿ò²»¿ÉÎª¿Õ");
+				JOptionPane.showMessageDialog(null, "æœ€å¤§å€Ÿä¹¦é‡æ–‡æœ¬æ¡†ä¸å¯ä¸ºç©º");
 				return;
 			}
 			if(maxnumber.getText().length()>2||tel.getText().length()<0){
-				JOptionPane.showMessageDialog(null, "×î´ó½èÊéÁ¿ÎªÁ½Î»Êı×Ö");
+				JOptionPane.showMessageDialog(null, "æœ€å¤§å€Ÿä¹¦é‡ä¸ºä¸¤ä½æ•°å­—");
 				return;
 			}
 			if(bztime.getText().isEmpty()||date.getText().isEmpty()){
-				JOptionPane.showMessageDialog(null, "Ê±¼ä¸ñÊ½ÇëÊ¹ÓÃ\"2007-05-10\"¸ñÊ½");
+				JOptionPane.showMessageDialog(null, "æ—¶é—´æ ¼å¼è¯·ä½¿ç”¨\"2007-05-10\"æ ¼å¼");
 				return;
 			}
 		
@@ -341,7 +325,7 @@ public class ReaderAddIFrame extends JInternalFrame {
 			int i=DbHelper.InsertReader(readername.getText().trim(), sex.trim(), age.getText().trim(),zjnumber.getText().trim(), Date.valueOf(date.getText().trim()), maxnumber.getText().trim(),tel.getText().trim(), Double.valueOf(keepmoney.getText().trim()),zj,zy.getText().trim(),Date.valueOf(bztime.getText().trim()),ISBN.getText().trim());
 			System.out.println(i);
 			if(i==1){
-				JOptionPane.showMessageDialog(null, "Ìí¼Ó³É¹¦£¡");
+				JOptionPane.showMessageDialog(null, "æ·»åŠ æˆåŠŸï¼");
 				doDefaultCloseAction();
 			}
 			
@@ -355,7 +339,7 @@ public class ReaderAddIFrame extends JInternalFrame {
 			}
 		}
 	}
-	class CloseActionListener implements ActionListener {			// Ìí¼Ó¹Ø±Õ°´Å¥µÄÊÂ¼ş¼àÌıÆ÷
+	class CloseActionListener implements ActionListener {			// æ·»åŠ å…³é—­æŒ‰é’®çš„äº‹ä»¶ç›‘å¬å™¨
 		public void actionPerformed(final ActionEvent e) {
 			doDefaultCloseAction();
 		}

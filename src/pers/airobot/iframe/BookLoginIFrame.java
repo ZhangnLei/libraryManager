@@ -53,7 +53,7 @@ public class BookLoginIFrame extends JFrame {
 					ex.printStackTrace();
 				}
 			} else {
-				JOptionPane.showMessageDialog(null, "Ö»ÓĞ¹ÜÀíÔ±²Å¿ÉÒÔµÇÂ¼£¡");
+				JOptionPane.showMessageDialog(null, "åªæœ‰ç®¡ç†å‘˜æ‰å¯ä»¥ç™»å½•ï¼");
 				username.setText("");
 				password.setText("");
 			}
@@ -78,7 +78,7 @@ public class BookLoginIFrame extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		borderLayout.setVgap(10);
 		getContentPane().setLayout(borderLayout);
-		setTitle("Í¼Êé¹İ¹ÜÀíÏµÍ³µÇÂ¼");
+		setTitle("å›¾ä¹¦é¦†ç®¡ç†ç³»ç»Ÿç™»å½•");
 		setBounds(100, 100, 285, 194);
 
 		final JPanel panel = new JPanel();
@@ -98,7 +98,7 @@ public class BookLoginIFrame extends JFrame {
 		label.setPreferredSize(new Dimension(0, 0));
 		label.setMinimumSize(new Dimension(0, 0));
 		panel_2.add(label);
-		label.setText("ÓÃ  »§  Ãû£º");
+		label.setText("ç”¨  æˆ·  åï¼š");
 
 		username = new JTextField(20);
 		username.setPreferredSize(new Dimension(0, 0));
@@ -107,11 +107,11 @@ public class BookLoginIFrame extends JFrame {
 		final JLabel label_1 = new JLabel();
 		label_1.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_2.add(label_1);
-		label_1.setText("ÃÜ      Âë£º");
+		label_1.setText("å¯†      ç ï¼š");
 
 		password = new JPasswordField(20);
 		password.setDocument(new MyDocument(6));
-		password.setEchoChar('*');//ÉèÖÃÃÜÂë¿òµÄ»ØÏÔ×Ö·û
+		password.setEchoChar('*');//è®¾ç½®å¯†ç æ¡†çš„å›æ˜¾å­—ç¬¦
 		password.addKeyListener(new KeyAdapter() {
 			public void keyPressed(final KeyEvent e) {
 				if (e.getKeyCode() == 10)
@@ -127,12 +127,12 @@ public class BookLoginIFrame extends JFrame {
 		login.addActionListener(new BookLoginAction());
 		
 		
-		login.setText("µÇÂ¼");
+		login.setText("ç™»å½•");
 		panel_1.add(login);
 		reset=new JButton();
 		reset.addActionListener(new BookResetAction());
 		
-		reset.setText("ÖØÖÃ");
+		reset.setText("é‡ç½®");
 		panel_1.add(reset);
 
 		final JLabel tupianLabel = new JLabel();

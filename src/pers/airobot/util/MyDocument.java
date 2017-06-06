@@ -18,10 +18,10 @@ public class MyDocument extends PlainDocument{
 	      this(10); 
 	   } 
 
-	   //ÖØÔØ¸¸ÀàµÄinsertStringº¯Êı 
+	   //é‡è½½çˆ¶ç±»çš„insertStringå‡½æ•° 
 	    public void insertString(int offset, String str, AttributeSet a)
 			throws BadLocationException {
-		if (getLength() + str.length() > maxLength) {//ÕâÀï¼Ù¶¨ÄãµÄÏŞÖÆ³¤¶ÈÎª10 
+		if (getLength() + str.length() > maxLength) {//è¿™é‡Œå‡å®šä½ çš„é™åˆ¶é•¿åº¦ä¸º10 
 			return;
 		} else {
 			super.insertString(offset, str, a);

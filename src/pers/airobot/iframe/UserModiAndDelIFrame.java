@@ -53,8 +53,8 @@ public class UserModiAndDelIFrame extends JInternalFrame {
 	private ButtonGroup buttonGroup = new ButtonGroup();
 	private JRadioButton JRadioButton1,JRadioButton2;
 	private Object[][] getFileStates(List<?> list){
-		String[] str = { "ÓÃ»§±àºÅ", "ÓÃ»§ĞÕÃû", "ĞÔ±ğ", "ÄêÁä", "Ñº½ğ", "°ìÖ¤ÈÕÆÚ",
-				"µç»°", "ÃÜÂë" };
+		String[] str = { "ç”¨æˆ·ç¼–å·", "ç”¨æˆ·å§“å", "æ€§åˆ«", "å¹´é¾„", "æŠ¼é‡‘", "åŠè¯æ—¥æœŸ",
+				"ç”µè¯", "å¯†ç " };
 		Object[][]users=new Object[list.size()][str.length];
 		for(int i=0;i<list.size();i++){
 			user user=(user)list.get(i);
@@ -62,10 +62,10 @@ public class UserModiAndDelIFrame extends JInternalFrame {
 			users[i][1]=user.getName();
 			String sex;
 			if(user.getSex().equals("1")){
-				sex="ÄĞ";
+				sex="ç”·";
 			}
 			else
-				sex="Å®";
+				sex="å¥³";
 			users[i][2]=sex;
 			users[i][3]=user.getAge();
 			users[i][4]=user.getIdentityCard();
@@ -82,7 +82,7 @@ public class UserModiAndDelIFrame extends JInternalFrame {
 		super();
 		setIconifiable(true);
 		setClosable(true);
-		setTitle("ÓÃ»§ĞÅÏ¢ĞŞ¸ÄÓëÉ¾³ı");
+		setTitle("ç”¨æˆ·ä¿¡æ¯ä¿®æ”¹ä¸åˆ é™¤");
 		setBounds(100, 100, 500, 450);
 
 		final JPanel panel = new JPanel();
@@ -94,8 +94,8 @@ public class UserModiAndDelIFrame extends JInternalFrame {
 		panel.add(scrollPane);
 
 		Object[][] results=getFileStates(DbHelper.selectuser());
-		str = new String[]{"ÓÃ»§±àºÅ", "ÓÃ»§ĞÕÃû", "ĞÔ±ğ", "ÄêÁä", "Ñº½ğ", "°ìÖ¤ÈÕÆÚ",
-				"µç»°", "ÃÜÂë" };
+		str = new String[]{"ç”¨æˆ·ç¼–å·", "ç”¨æˆ·å§“å", "æ€§åˆ«", "å¹´é¾„", "æŠ¼é‡‘", "åŠè¯æ—¥æœŸ",
+				"ç”µè¯", "å¯†ç " };
 		table = new JTable(results,str);
 		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 		
@@ -106,7 +106,7 @@ public class UserModiAndDelIFrame extends JInternalFrame {
 				int selRow = table.getSelectedRow();
 				idd = table.getValueAt(selRow, 0).toString().trim();
 				name = table.getValueAt(selRow, 1).toString().trim();
-				if(table.getValueAt(selRow, 2).toString().trim().equals("ÄĞ"))
+				if(table.getValueAt(selRow, 2).toString().trim().equals("ç”·"))
 					JRadioButton1.setSelected(true);
 				else
 					JRadioButton2.setSelected(true);
@@ -148,21 +148,21 @@ public class UserModiAndDelIFrame extends JInternalFrame {
 		panel_2.add(panel_4);
 		final JLabel label_8 = new JLabel();
 		panel_4.add(label_8);
-		label_8.setText("    ÓÃ »§ ±à ºÅ£º");
+		label_8.setText("    ç”¨ æˆ· ç¼– å·ï¼š");
 
 		textField_7 = new JTextField();
 		panel_4.add(textField_7);
 		
 		final JLabel label = new JLabel();
 		panel_4.add(label);
-		label.setText("    ÓÃ »§ ĞÕ Ãû£º");
+		label.setText("    ç”¨ æˆ· å§“ åï¼š");
 
 		textField = new JTextField();
 		panel_4.add(textField);
 
 		final JLabel label_1 = new JLabel();
 		panel_4.add(label_1);
-		label_1.setText("    ĞÔ       ±ğ£º");
+		label_1.setText("    æ€§       åˆ«ï¼š");
 		final JPanel panel_3 = new JPanel();
 		panel_4.add(panel_3);
 		final FlowLayout flowLayout = new FlowLayout();
@@ -173,7 +173,7 @@ public class UserModiAndDelIFrame extends JInternalFrame {
 		JRadioButton1.setSelected(true);
 		buttonGroup.add(JRadioButton1);
 		panel_3.add(JRadioButton1);
-		JRadioButton1.setText("ÄĞ");
+		JRadioButton1.setText("ç”·");
 		JRadioButton1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -182,12 +182,12 @@ public class UserModiAndDelIFrame extends JInternalFrame {
 		JRadioButton2.setSelected(true);
 		buttonGroup.add(JRadioButton2);
 		panel_3.add(JRadioButton2);
-		JRadioButton2.setText("Å®");
+		JRadioButton2.setText("å¥³");
 		
 
 		final JLabel label_2 = new JLabel();
 		panel_4.add(label_2);
-		label_2.setText("    Äê       Áä£º");
+		label_2.setText("    å¹´       é¾„ï¼š");
 
 		textField_2 = new JTextField();
 		textField_2.setMinimumSize(new Dimension(0, 1));
@@ -199,7 +199,7 @@ public class UserModiAndDelIFrame extends JInternalFrame {
 
 		final JLabel label_7 = new JLabel();
 		panel_4.add(label_7);
-		label_7.setText("    Ñº       ½ğ£º");
+		label_7.setText("    æŠ¼       é‡‘ï¼š");
 
 		textField_5 = new JTextField();
 		panel_4.add(textField_5);
@@ -207,17 +207,17 @@ public class UserModiAndDelIFrame extends JInternalFrame {
 		
 		final JLabel label_3 = new JLabel();
 		panel_4.add(label_3);
-		label_3.setText("    °ì Ö¤ ÈÕ ÆÚ£º");
+		label_3.setText("    åŠ è¯ æ—¥ æœŸï¼š");
 
 		textField_3 = new JTextField();
 		panel_4.add(textField_3);
 
 		final JLabel label_4 = new JLabel();
 		panel_4.add(label_4);
-		label_4.setText("    Áª Ïµ µç »°£º");
+		label_4.setText("    è” ç³» ç”µ è¯ï¼š");
         
 		
-		textField_4 = new JTextField("µç»°ºÅ±ØĞëÊÇÊ®Ò»Î»",11);
+		textField_4 = new JTextField("ç”µè¯å·å¿…é¡»æ˜¯åä¸€ä½",11);
 		panel_4.add(textField_4);
 		textField_4.setDocument(new MyDocument(11)); 
 		
@@ -228,7 +228,7 @@ public class UserModiAndDelIFrame extends JInternalFrame {
 		
 		final JLabel label_5 = new JLabel();
 		panel_4.add(label_5);
-		label_5.setText("    ÃÜ       Âë£º");
+		label_5.setText("    å¯†       ç ï¼š");
 
 		textField_6 = new JTextField();
 		panel_4.add(textField_6);
@@ -237,7 +237,7 @@ public class UserModiAndDelIFrame extends JInternalFrame {
 		panel_1.setPreferredSize(new Dimension(0, 50));
 		getContentPane().add(panel_1, BorderLayout.SOUTH);
 		final JButton button = new JButton();
-		button.setText("ĞŞ¸Ä");
+		button.setText("ä¿®æ”¹");
 		panel_1.add(button);
 		button.addActionListener(new ActionListener(){
 
@@ -245,33 +245,33 @@ public class UserModiAndDelIFrame extends JInternalFrame {
 				
 				if(textField.getText().length()==0){
 					
-						JOptionPane.showMessageDialog(null, "ÓÃ»§Ãû²»ÄÜÎª¿Õ");
+						JOptionPane.showMessageDialog(null, "ç”¨æˆ·åä¸èƒ½ä¸ºç©º");
 						return;
 					}
 				
 					if(textField_2.getText().length()==0){
-						JOptionPane.showMessageDialog(null, "ÄêÁä²»ÄÜÎª¿Õ");
+						JOptionPane.showMessageDialog(null, "å¹´é¾„ä¸èƒ½ä¸ºç©º");
 						return;
 					}
 					
 					if(textField_4.getText().length()==0){
-						JOptionPane.showMessageDialog(null, "µç»°²»ÄÜÎª¿Õ");
+						JOptionPane.showMessageDialog(null, "ç”µè¯ä¸èƒ½ä¸ºç©º");
 						return;
 					}
 					if(textField_4.getText().length()!=11){
-						JOptionPane.showMessageDialog(null, "µç»°ºÅ±ØĞëÊÇÊ®Ò»Î»");
+						JOptionPane.showMessageDialog(null, "ç”µè¯å·å¿…é¡»æ˜¯åä¸€ä½");
 						return;
 					}
 					if(textField_5.getText().length()==0){
-						JOptionPane.showMessageDialog(null, "Ñº½ğ²»ÄÜÎª¿Õ");
+						JOptionPane.showMessageDialog(null, "æŠ¼é‡‘ä¸èƒ½ä¸ºç©º");
 						return;
 					}
 					if(textField_6.getText().length()==0){
-						JOptionPane.showMessageDialog(null, "ÃÜÂë²»ÄÜÎª¿Õ");
+						JOptionPane.showMessageDialog(null, "å¯†ç ä¸èƒ½ä¸ºç©º");
 						return;
 					}
 					if(textField_6.getText().length()>15){
-						JOptionPane.showMessageDialog(null, "ÃÜÂë²»ÄÜ´óÓÚÊ®ÎåÎ»");
+						JOptionPane.showMessageDialog(null, "å¯†ç ä¸èƒ½å¤§äºåäº”ä½");
 						return;
 					}
 					
@@ -289,7 +289,7 @@ public class UserModiAndDelIFrame extends JInternalFrame {
 			int i=	DbHelper.Updateuser(id, name, sex, age, card, java.sql.Date.valueOf(date), tel, password);
 			if(i==1){
 
-				JOptionPane.showMessageDialog(null, "ĞŞ¸Ä³É¹¦");
+				JOptionPane.showMessageDialog(null, "ä¿®æ”¹æˆåŠŸ");
 				Object[][] results=getFileStates(DbHelper.selectuser());
 				DefaultTableModel model=new DefaultTableModel();					
 				table.setModel(model);
@@ -300,14 +300,14 @@ public class UserModiAndDelIFrame extends JInternalFrame {
 			
 		});
 		final JButton button_2 = new JButton();
-		button_2.setText("É¾³ı");
+		button_2.setText("åˆ é™¤");
 		panel_1.add(button_2);
 		button_2.addActionListener(new ActionListener(){
 			public void actionPerformed(final ActionEvent e) {
 				int id=Integer.parseInt(textField_7.getText());
 				int i=DbHelper.Deluser(id);
 				if(i==1){
-					JOptionPane.showMessageDialog(null, "É¾³ı³É¹¦");
+					JOptionPane.showMessageDialog(null, "åˆ é™¤æˆåŠŸ");
 					Object[][] results=getFileStates(DbHelper.selectuser());
 					DefaultTableModel model=new DefaultTableModel();					
 					table.setModel(model);
@@ -318,14 +318,14 @@ public class UserModiAndDelIFrame extends JInternalFrame {
 		
 		
 		final JButton button_1 = new JButton();
-		button_1.setText("ÍË³ö");
+		button_1.setText("é€€å‡º");
 		panel_1.add(button_1);
         button_1.addActionListener(new CloseActionListener());
 		
 		setVisible(true);
 		
 	}
-	class CloseActionListener implements ActionListener {			// Ìí¼Ó¹Ø±Õ°´Å¥µÄÊÂ¼ş¼àÌıÆ÷
+	class CloseActionListener implements ActionListener {			// æ·»åŠ å…³é—­æŒ‰é’®çš„äº‹ä»¶ç›‘å¬å™¨
 		public void actionPerformed(final ActionEvent e) {
 			doDefaultCloseAction();
 		}

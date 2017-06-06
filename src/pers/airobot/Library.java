@@ -1,49 +1,39 @@
 package pers.airobot;
 
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-//import java.awt.Dialog.ModalExclusionType;
+import pers.airobot.iframe.BookLoginIFrame;
+import pers.airobot.util.CreatecdIcon;
+
+import javax.swing.*;
+import javax.swing.border.BevelBorder;
+import java.awt.*;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
+
+//import java.awt.Dialog.ModalExclusionType;
 //import java.net.URL;
-
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JDesktopPane;
-import javax.swing.JFrame;
-import javax.swing.JInternalFrame;
-import javax.swing.JLabel;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JToolBar;
-import javax.swing.UIManager;
-import javax.swing.WindowConstants;
-import javax.swing.border.BevelBorder;
-
-import pers.airobot.iframe.BookLoginIFrame;
-import pers.airobot.util.CreatecdIcon;;
+;
 
 /**
- * Ö÷´°Ìå
- * 
+ * ä¸»çª—ä½“
+ *
  */
 public class Library extends JFrame {
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 	private static final JDesktopPane DESKTOP_PANE = new JDesktopPane();
 	public static void main(String[] args) {
-		
+
 		try {
 			UIManager.setLookAndFeel(UIManager
 					.getSystemLookAndFeelClassName());
-			new BookLoginIFrame();//µÇÂ¼´°¿Ú
+			new BookLoginIFrame();//ç™»å½•çª—å£
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
 	}
-	public static void addIFame(JInternalFrame iframe) { // Ìí¼Ó×Ó´°ÌåµÄ·½·¨
+	public static void addIFame(JInternalFrame iframe) { // æ·»åŠ å­çª—ä½“çš„æ–¹æ³•
 		DESKTOP_PANE.add(iframe);
 	}
 	public Library() {
@@ -52,14 +42,14 @@ public class Library extends JFrame {
 		//setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
 		setLocationByPlatform(true);
 		setSize(800, 600);
-		setTitle("Í¼Êé¹İ¹ÜÀíÏµÍ³");
-		JMenuBar menuBar = createMenu(); // µ÷ÓÃ´´½¨²Ëµ¥À¸µÄ·½·¨
+		setTitle("å›¾ä¹¦é¦†ç®¡ç†ç³»ç»Ÿ");
+		JMenuBar menuBar = createMenu(); // è°ƒç”¨åˆ›å»ºèœå•æ çš„æ–¹æ³•
 		setJMenuBar(menuBar);
-		JToolBar toolBar = createToolBar(); // µ÷ÓÃ´´½¨¹¤¾ßÀ¸µÄ·½·¨
+		JToolBar toolBar = createToolBar(); // è°ƒç”¨åˆ›å»ºå·¥å…·æ çš„æ–¹æ³•
 		getContentPane().add(toolBar, BorderLayout.NORTH);
 		final JLabel label = new JLabel();
 		label.setBounds(0, 0, 0, 0);
-		label.setIcon(null); // ´°Ìå±³¾°
+		label.setIcon(null); // çª—ä½“èƒŒæ™¯
 
 		DESKTOP_PANE.addComponentListener(new ComponentAdapter() {
 			public void componentResized(final ComponentEvent e) {
@@ -75,103 +65,103 @@ public class Library extends JFrame {
 		getContentPane().add(DESKTOP_PANE);
 	}
 	/**
-	 * ´´½¨¹¤¾ßÀ¸
-	 * 
+	 * åˆ›å»ºå·¥å…·æ 
+	 *
 	 * @return JToolBar
 	 */
-	private JToolBar createToolBar() { // ´´½¨¹¤¾ßÀ¸µÄ·½·¨
+	private JToolBar createToolBar() { // åˆ›å»ºå·¥å…·æ çš„æ–¹æ³•
 		JToolBar toolBar = new JToolBar();
 		toolBar.setFloatable(false);
 		toolBar.setBorder(new BevelBorder(BevelBorder.RAISED));
-		
+
 		JButton bookAddButton=new JButton(MenuActions.BOOK_ADD);
-		//ImageIcon icon=CreatecdIcon.add("bookAdd.bmp");//´´½¨Í¼±ê·½·¨
-		
-		ImageIcon icon=new ImageIcon(Library.class.getResource("/bookAddtb.jpg"));//Ìí¼Ó²Ëµ¥À¸Í¼±ê	
+		//ImageIcon icon=CreatecdIcon.add("bookAdd.bmp");//åˆ›å»ºå›¾æ ‡æ–¹æ³•
+
+		ImageIcon icon=new ImageIcon(Library.class.getResource("/bookAddtb.jpg"));//æ·»åŠ èœå•æ å›¾æ ‡
 		bookAddButton.setIcon(icon);
 		bookAddButton.setHideActionText(true);
-		
-		
-		//bookAddButton.setToolTipText("fjdkjfk");//Í¼Æ¬ÉÏÌáÊ¾×Ö
+
+
+		//bookAddButton.setToolTipText("fjdkjfk");//å›¾ç‰‡ä¸Šæç¤ºå­—
 		toolBar.add(bookAddButton);
 		//toolBar.add(MenuActions.BOOK_MODIFY);
-		
-		//ÔÚ¹¤¾ßÀ¸ÖĞÌí¼ÓÍ¼ÊéĞŞ¸ÄÓëÉ¾³ıÍ¼±ê
+
+		//åœ¨å·¥å…·æ ä¸­æ·»åŠ å›¾ä¹¦ä¿®æ”¹ä¸åˆ é™¤å›¾æ ‡
 		JButton bookModiAndDelButton=new JButton(MenuActions.BOOK_MODIFY);
-		ImageIcon bookmodiicon=CreatecdIcon.add("bookModiAndDeltb.jpg");//´´½¨Í¼±ê·½·¨
+		ImageIcon bookmodiicon=CreatecdIcon.add("bookModiAndDeltb.jpg");//åˆ›å»ºå›¾æ ‡æ–¹æ³•
 		bookModiAndDelButton.setIcon(bookmodiicon);
 		bookModiAndDelButton.setHideActionText(true);
 		toolBar.add(bookModiAndDelButton);
-		
-		
+
+
 		JButton bookTypeAddButton=new JButton(MenuActions.BOOKTYPE_ADD);
-		ImageIcon bookTypeAddicon=CreatecdIcon.add("bookTypeAddtb.jpg");//´´½¨Í¼±ê·½·¨
+		ImageIcon bookTypeAddicon=CreatecdIcon.add("bookTypeAddtb.jpg");//åˆ›å»ºå›¾æ ‡æ–¹æ³•
 		bookTypeAddButton.setIcon(bookTypeAddicon);
 		bookTypeAddButton.setHideActionText(true);
 		toolBar.add(bookTypeAddButton);
-		
-		
+
+
 		JButton bookBorrowButton=new JButton(MenuActions.BORROW);
-		ImageIcon bookBorrowicon=CreatecdIcon.add("bookBorrowtb.jpg");//´´½¨Í¼±ê·½·¨
+		ImageIcon bookBorrowicon=CreatecdIcon.add("bookBorrowtb.jpg");//åˆ›å»ºå›¾æ ‡æ–¹æ³•
 		bookBorrowButton.setIcon(bookBorrowicon);
 		bookBorrowButton.setHideActionText(true);
 		toolBar.add(bookBorrowButton);
-		
+
 		JButton bookOrderButton=new JButton(MenuActions.NEWBOOK_ORDER);
-		ImageIcon bookOrdericon=CreatecdIcon.add("bookOrdertb.jpg");//´´½¨Í¼±ê·½·¨
+		ImageIcon bookOrdericon=CreatecdIcon.add("bookOrdertb.jpg");//åˆ›å»ºå›¾æ ‡æ–¹æ³•
 		bookOrderButton.setIcon(bookOrdericon);
 		bookOrderButton.setHideActionText(true);
 		toolBar.add(bookOrderButton);
-		
+
 		JButton bookCheckButton=new JButton(MenuActions.NEWBOOK_CHECK_ACCEPT);
-		ImageIcon bookCheckicon=CreatecdIcon.add("newbookChecktb.jpg");//´´½¨Í¼±ê·½·¨
+		ImageIcon bookCheckicon=CreatecdIcon.add("newbookChecktb.jpg");//åˆ›å»ºå›¾æ ‡æ–¹æ³•
 		bookCheckButton.setIcon(bookCheckicon);
 		bookCheckButton.setHideActionText(true);
 		toolBar.add(bookCheckButton);
-		
+
 		JButton readerAddButton=new JButton(MenuActions.READER_ADD);
-		ImageIcon readerAddicon=CreatecdIcon.add("readerAddtb.jpg");//´´½¨Í¼±ê·½·¨
+		ImageIcon readerAddicon=CreatecdIcon.add("readerAddtb.jpg");//åˆ›å»ºå›¾æ ‡æ–¹æ³•
 		readerAddButton.setIcon(readerAddicon);
 		readerAddButton.setHideActionText(true);
 		toolBar.add(readerAddButton);
-		
+
 		JButton readerModiAndDelButton=new JButton(MenuActions.READER_MODIFY);
-		ImageIcon readerModiAndDelicon=CreatecdIcon.add("readerModiAndDeltb.jpg");//´´½¨Í¼±ê·½·¨
+		ImageIcon readerModiAndDelicon=CreatecdIcon.add("readerModiAndDeltb.jpg");//åˆ›å»ºå›¾æ ‡æ–¹æ³•
 		readerModiAndDelButton.setIcon(readerModiAndDelicon);
 		readerModiAndDelButton.setHideActionText(true);
 		toolBar.add(readerModiAndDelButton);
-		
+
 		JButton ExitButton=new JButton(MenuActions.EXIT);
-		ImageIcon Exiticon=CreatecdIcon.add("exittb.jpg");//´´½¨Í¼±ê·½·¨
+		ImageIcon Exiticon=CreatecdIcon.add("exittb.jpg");//åˆ›å»ºå›¾æ ‡æ–¹æ³•
 		ExitButton.setIcon(Exiticon);
 		ExitButton.setHideActionText(true);
 		toolBar.add(ExitButton);
 		return toolBar;
 	}
 	/**
-	 * ´´½¨²Ëµ¥À¸
+	 * åˆ›å»ºèœå•æ 
 	 */
-	private JMenuBar createMenu() { // ´´½¨²Ëµ¥À¸µÄ·½·¨
+	private JMenuBar createMenu() { // åˆ›å»ºèœå•æ çš„æ–¹æ³•
 		JMenuBar menuBar = new JMenuBar();
 
-		JMenu bookOrderMenu = new JMenu(); // ³õÊ¼»¯ĞÂÊé¶©¹º¹ÜÀí²Ëµ¥
+		JMenu bookOrderMenu = new JMenu(); // åˆå§‹åŒ–æ–°ä¹¦è®¢è´­ç®¡ç†èœå•
 		bookOrderMenu.setIcon(CreatecdIcon.add("xsdgcd.jpg"));
 		bookOrderMenu.add(MenuActions.NEWBOOK_ORDER);
 		bookOrderMenu.add(MenuActions.NEWBOOK_CHECK_ACCEPT);
 
-		 
-		JMenu baseMenu = new JMenu();// ³õÊ¼»¯»ù´¡Êı¾İÎ¬»¤²Ëµ¥
+
+		JMenu baseMenu = new JMenu();// åˆå§‹åŒ–åŸºç¡€æ•°æ®ç»´æŠ¤èœå•
 		baseMenu.setIcon(CreatecdIcon.add("jcsjcd.jpg"));
 		{
-			JMenu readerManagerMItem = new JMenu("¶ÁÕßĞÅÏ¢¹ÜÀí");
+			JMenu readerManagerMItem = new JMenu("è¯»è€…ä¿¡æ¯ç®¡ç†");
 			readerManagerMItem.add(MenuActions.READER_ADD);
 			readerManagerMItem.add(MenuActions.READER_MODIFY);
 
-			JMenu bookTypeManageMItem = new JMenu("Í¼ÊéÀà±ğ¹ÜÀí");
+			JMenu bookTypeManageMItem = new JMenu("å›¾ä¹¦ç±»åˆ«ç®¡ç†");
 			bookTypeManageMItem.add(MenuActions.BOOKTYPE_ADD);
 			bookTypeManageMItem.add(MenuActions.BOOKTYPE_MODIFY);
 
-			JMenu menu = new JMenu("Í¼ÊéĞÅÏ¢¹ÜÀí");
+			JMenu menu = new JMenu("å›¾ä¹¦ä¿¡æ¯ç®¡ç†");
 			menu.add(MenuActions.BOOK_ADD);
 			menu.add(MenuActions.BOOK_MODIFY);
 
@@ -181,24 +171,24 @@ public class Library extends JFrame {
 			baseMenu.addSeparator();
 			baseMenu.add(MenuActions.EXIT);
 		}
-		JMenu borrowManageMenu = new JMenu(); // ½èÔÄ¹ÜÀí
+		JMenu borrowManageMenu = new JMenu(); // å€Ÿé˜…ç®¡ç†
 		borrowManageMenu.setIcon(CreatecdIcon.add("jyglcd.jpg"));
-		borrowManageMenu.add(MenuActions.BORROW); // ½èÔÄ
-		borrowManageMenu.add(MenuActions.GIVE_BACK); // ¹é»¹
-		borrowManageMenu.add(MenuActions.BOOK_SEARCH); // ËÑË÷
+		borrowManageMenu.add(MenuActions.BORROW); // å€Ÿé˜…
+		borrowManageMenu.add(MenuActions.GIVE_BACK); // å½’è¿˜
+		borrowManageMenu.add(MenuActions.BOOK_SEARCH); // æœç´¢
 
-		JMenu sysManageMenu = new JMenu(); // ÏµÍ³Î¬»¤
+		JMenu sysManageMenu = new JMenu(); // ç³»ç»Ÿç»´æŠ¤
 		sysManageMenu.setIcon(CreatecdIcon.add("jcwhcd.jpg"));
-		JMenu userManageMItem = new JMenu("ÓÃ»§¹ÜÀí"); // ÓÃ»§¹ÜÀí
+		JMenu userManageMItem = new JMenu("ç”¨æˆ·ç®¡ç†"); // ç”¨æˆ·ç®¡ç†
 		userManageMItem.add(MenuActions.USER_ADD);
 		userManageMItem.add(MenuActions.USER_MODIFY);
 		sysManageMenu.add(MenuActions.MODIFY_PASSWORD);
 		sysManageMenu.add(userManageMItem);
 
-		menuBar.add(baseMenu); // Ìí¼Ó»ù´¡Êı¾İÎ¬»¤²Ëµ¥µ½²Ëµ¥À¸
-		menuBar.add(bookOrderMenu); // Ìí¼ÓĞÂÊé¶©¹º¹ÜÀí²Ëµ¥µ½²Ëµ¥À¸
-		menuBar.add(borrowManageMenu); // Ìí¼Ó½èÔÄ¹ÜÀí²Ëµ¥µ½²Ëµ¥À¸
-		menuBar.add(sysManageMenu); // Ìí¼ÓÏµÍ³Î¬»¤²Ëµ¥µ½²Ëµ¥À¸
+		menuBar.add(baseMenu); // æ·»åŠ åŸºç¡€æ•°æ®ç»´æŠ¤èœå•åˆ°èœå•æ 
+		menuBar.add(bookOrderMenu); // æ·»åŠ æ–°ä¹¦è®¢è´­ç®¡ç†èœå•åˆ°èœå•æ 
+		menuBar.add(borrowManageMenu); // æ·»åŠ å€Ÿé˜…ç®¡ç†èœå•åˆ°èœå•æ 
+		menuBar.add(sysManageMenu); // æ·»åŠ ç³»ç»Ÿç»´æŠ¤èœå•åˆ°èœå•æ 
 		return menuBar;
 	}
 }

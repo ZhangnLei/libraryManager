@@ -37,14 +37,14 @@ public class ChangePwd extends JInternalFrame{
 		super();
 		
 		setIconifiable(true);
-		setTitle("¸ü¸ÄÃÜÂë");
+		setTitle("æ›´æ”¹å¯†ç ");
 		setClosable(true);
 		getContentPane().setLayout(new GridBagLayout());
 		setBounds(100, 100, 300, 228);
 		final JLabel label_4 = new JLabel();
 		label_4.setFont(new Font("", Font.PLAIN, 14));
 		label_4.setForeground(Color.RED);
-		label_4.setText("<html>×¢£ºÃ¿¸ö<b>²Ù×÷Ô±</b>Ö»ÄÜĞŞ¸Ä×Ô¼ºµÄÃÜÂë¡£</html>");
+		label_4.setText("<html>æ³¨ï¼šæ¯ä¸ª<b>æ“ä½œå‘˜</b>åªèƒ½ä¿®æ”¹è‡ªå·±çš„å¯†ç ã€‚</html>");
 		final GridBagConstraints gridBagConstraints_10 = new GridBagConstraints();
 		gridBagConstraints_10.weighty = 1.0;
 		gridBagConstraints_10.gridwidth = 4;
@@ -54,7 +54,7 @@ public class ChangePwd extends JInternalFrame{
 		
 		final JLabel label_5 = new JLabel();
 		label_5.setFont(new Font("", Font.PLAIN, 14));
-		label_5.setText("µÇ  Â¼  Ãû£º");
+		label_5.setText("ç™»  å½•  åï¼š");
 		final GridBagConstraints gridBagConstraints_11 = new GridBagConstraints();
 		gridBagConstraints_11.gridy = 2;
 		gridBagConstraints_11.gridx = 0;
@@ -72,7 +72,7 @@ public class ChangePwd extends JInternalFrame{
 		
 		final JLabel label_1 = new JLabel();
 		label_1.setFont(new Font("", Font.PLAIN, 14));
-		label_1.setText("¾É  ÃÜ  Âë£º");
+		label_1.setText("æ—§  å¯†  ç ï¼š");
 		final GridBagConstraints gridBagConstraints_2 = new GridBagConstraints();
 		gridBagConstraints_2.gridy = 3;
 		gridBagConstraints_2.gridx = 0;
@@ -91,7 +91,7 @@ public class ChangePwd extends JInternalFrame{
 
 		final JLabel label_2 = new JLabel();
 		label_2.setFont(new Font("", Font.PLAIN, 14));
-		label_2.setText("ĞÂ  ÃÜ  Âë£º");
+		label_2.setText("æ–°  å¯†  ç ï¼š");
 		final GridBagConstraints gridBagConstraints_4 = new GridBagConstraints();
 		gridBagConstraints_4.gridy = 4;
 		gridBagConstraints_4.gridx = 0;
@@ -112,7 +112,7 @@ public class ChangePwd extends JInternalFrame{
 
 		final JLabel label_3 = new JLabel();
 		label_3.setFont(new Font("", Font.PLAIN, 14));
-		label_3.setText("È·ÈÏĞÂÃÜÂë£º");
+		label_3.setText("ç¡®è®¤æ–°å¯†ç ï¼š");
 		final GridBagConstraints gridBagConstraints_6 = new GridBagConstraints();
 		gridBagConstraints_6.gridy = 5;
 		gridBagConstraints_6.gridx = 0;
@@ -142,17 +142,17 @@ public class ChangePwd extends JInternalFrame{
 						oldPass.setText(null);
 						newPass1.setText(null);
 						newPass2.setText(null);
-						JOptionPane.showMessageDialog(getContentPane(), "ÃÜÂëĞŞ¸Ä³É¹¦¡£");
+						JOptionPane.showMessageDialog(getContentPane(), "å¯†ç ä¿®æ”¹æˆåŠŸã€‚");
 						doDefaultCloseAction();
 					}else {
-						JOptionPane.showMessageDialog(getContentPane(), "Á½´ÎÊäÈëµÄÃÜÂë²»Ò»ÖÂ£¬ÇëÖØĞÂÊäÈë¡£");
+						JOptionPane.showMessageDialog(getContentPane(), "ä¸¤æ¬¡è¾“å…¥çš„å¯†ç ä¸ä¸€è‡´ï¼Œè¯·é‡æ–°è¾“å…¥ã€‚");
 					}
 				}else {
-					JOptionPane.showMessageDialog(getContentPane(), "¾ÉÃÜÂëÊäÈë´íÎó£¬ÇëÈ·ÈÏÃÜÂë¡£");
+					JOptionPane.showMessageDialog(getContentPane(), "æ—§å¯†ç è¾“å…¥é”™è¯¯ï¼Œè¯·ç¡®è®¤å¯†ç ã€‚");
 				}
 			}
 		});
-		button.setText("È·ÈÏ");
+		button.setText("ç¡®è®¤");
 		final GridBagConstraints gridBagConstraints_8 = new GridBagConstraints();
 		gridBagConstraints_8.weighty = 1.0;
 		gridBagConstraints_8.anchor = GridBagConstraints.EAST;
@@ -168,7 +168,7 @@ public class ChangePwd extends JInternalFrame{
 				newPass2.setText(null);
 			}
 		});
-		button_1.setText("ÖØĞ´");
+		button_1.setText("é‡å†™");
 		final GridBagConstraints gridBagConstraints_9 = new GridBagConstraints();
 		gridBagConstraints_9.gridwidth = 2;
 		gridBagConstraints_9.weighty = 1.0;

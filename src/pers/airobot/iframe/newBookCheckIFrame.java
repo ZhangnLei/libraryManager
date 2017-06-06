@@ -51,7 +51,7 @@ public class newBookCheckIFrame extends JInternalFrame {
 	
 	JRadioButton radioButton2;
 	JRadioButton radioButton1;
-	private String[] columnNames={ "Í¼Êé±àºÅ", "¶©¹ºÈÕÆÚ", "¶©¹ºÊıÁ¿","²Ù×÷Ô±","ÊÇ·ñÑéÊÕ","ÕÛ¿Û","Í¼ÊéÀà±ğ","Í¼ÊéÃû³Æ","×÷Õß","ÒëÕß","³ö°æÉç","³ö°æÈÕÆÚ","Í¼Êé¼Û¸ñ"};
+	private String[] columnNames={ "å›¾ä¹¦ç¼–å·", "è®¢è´­æ—¥æœŸ", "è®¢è´­æ•°é‡","æ“ä½œå‘˜","æ˜¯å¦éªŒæ”¶","æŠ˜æ‰£","å›¾ä¹¦ç±»åˆ«","å›¾ä¹¦åç§°","ä½œè€…","è¯‘è€…","å‡ºç‰ˆç¤¾","å‡ºç‰ˆæ—¥æœŸ","å›¾ä¹¦ä»·æ ¼"};
 	//private Map map=MapTrans.getMap();
 	private Object[][] getFileStates(List<?> list){
 		Object[][]results=new Object[list.size()][columnNames.length];
@@ -63,10 +63,10 @@ public class newBookCheckIFrame extends JInternalFrame {
 			results[i][3]=order.getOperator();
 			
 			String CheckAndAccepts;
-			if(order.getCheckAndAccept().equals("1"))//1´ú±íÃ»ÓĞÑéÊÕ
-				CheckAndAccepts="·ñ";
+			if(order.getCheckAndAccept().equals("1"))//1ä»£è¡¨æ²¡æœ‰éªŒæ”¶
+				CheckAndAccepts="å¦";
 			else
-				CheckAndAccepts="ÊÇ";
+				CheckAndAccepts="æ˜¯";
 			results[i][4]=CheckAndAccepts;
 			
 			results[i][5]=order.getZk();
@@ -93,7 +93,7 @@ public class newBookCheckIFrame extends JInternalFrame {
 		setClosable(true);
 		setIconifiable(true);
 		setAutoscrolls(true);
-		setTitle("Í¼ÊéÑéÊÕ");
+		setTitle("å›¾ä¹¦éªŒæ”¶");
 		setBounds(100, 100, 700, 420);
 		
 
@@ -109,7 +109,7 @@ public class newBookCheckIFrame extends JInternalFrame {
 		model.setDataVector(results,columnNames);
 		table = new JTable();
 		table.setModel(model);
-		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);//¹Ø±ÕÁĞ×Ô¶¯±äĞ¡
+		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);//å…³é—­åˆ—è‡ªåŠ¨å˜å°
 		scrollPane.setViewportView(table);
 		table.addMouseListener(new TableListener());
 
@@ -123,7 +123,7 @@ public class newBookCheckIFrame extends JInternalFrame {
 		panel.add(panel_1_1);
 
 		final JLabel label_1 = new JLabel();
-		label_1.setText("¶©¹ºÈÕÆÚ£º");
+		label_1.setText("è®¢è´­æ—¥æœŸï¼š");
 		panel_1_1.add(label_1);
 
 		SimpleDateFormat myfmt=new SimpleDateFormat("yyyy-MM-dd");
@@ -134,27 +134,27 @@ public class newBookCheckIFrame extends JInternalFrame {
 		panel_1_1.add(orderDate);
 
 		final JLabel label_3 = new JLabel();
-		label_3.setText("Êé¼®±àºÅ£º");
+		label_3.setText("ä¹¦ç±ç¼–å·ï¼š");
 		panel_1_1.add(label_3);
 
 		ISBN = new JTextField();
 		panel_1_1.add(ISBN);
 
 		final JLabel label_4 = new JLabel();
-		label_4.setText("¶©¹ºÊıÁ¿£º");
+		label_4.setText("è®¢è´­æ•°é‡ï¼š");
 		panel_1_1.add(label_4);
 
 		orderNumber = new JTextField();
 		panel_1_1.add(orderNumber);
 
 		final JLabel label_5 = new JLabel();
-		label_5.setText("²Ù×÷Ô±£º");
+		label_5.setText("æ“ä½œå‘˜ï¼š");
 		panel_1_1.add(label_5);
 		operator = new JTextField(user.getName());
 		panel_1_1.add(operator);
 
 		final JLabel label_6 = new JLabel();
-		label_6.setText("Í¼ÊéÀà±ğ£º");
+		label_6.setText("å›¾ä¹¦ç±»åˆ«ï¼š");
 		panel_1_1.add(label_6);
 
 		bookType = new JTextField();
@@ -162,14 +162,14 @@ public class newBookCheckIFrame extends JInternalFrame {
 
 
 		final JLabel label_7 = new JLabel();
-		label_7.setText("Í¼ÊéÔ­¼Û¸ñ£º");
+		label_7.setText("å›¾ä¹¦åŸä»·æ ¼ï¼š");
 		panel_1_1.add(label_7);
 
 		price = new JTextField();
 		panel_1_1.add(price);
 
 		final JLabel label_9 = new JLabel();
-		label_9.setText("ÊÇ·ñÑéÊÕ£º");
+		label_9.setText("æ˜¯å¦éªŒæ”¶ï¼š");
 		panel_1_1.add(label_9);
 
 		final JPanel panel_1 = new JPanel();
@@ -179,22 +179,22 @@ public class newBookCheckIFrame extends JInternalFrame {
 		radioButton1.setSelected(true);
 		panel_1.add(radioButton1);
 		buttonGroup.add(radioButton1);
-		radioButton1.setText("ÊÇ");
+		radioButton1.setText("æ˜¯");
 
 		radioButton2= new JRadioButton();
 		panel_1.add(radioButton2);
 		buttonGroup.add(radioButton2);
-		radioButton2.setText("·ñ");
+		radioButton2.setText("å¦");
 
 		final JLabel label = new JLabel();
-		label.setText("ÕÛ¿Û£º");
+		label.setText("æŠ˜æ‰£ï¼š");
 		panel_1_1.add(label);
 
 		zk = new JTextField();
 		panel_1_1.add(zk);
 
 		final JLabel label_2 = new JLabel();
-		label_2.setText("¶©¹º¼Û¸ñ£º");
+		label_2.setText("è®¢è´­ä»·æ ¼ï¼š");
 		panel_1_1.add(label_2);
 
 		orderPrice = new JTextField();
@@ -206,20 +206,20 @@ public class newBookCheckIFrame extends JInternalFrame {
 
 		final JButton buttonCheck = new JButton();
 		panel_2.add(buttonCheck);
-		buttonCheck.setText("ÑéÊÕ");
+		buttonCheck.setText("éªŒæ”¶");
 		buttonCheck.addActionListener(new CheckActionListener(model));
 
 		final JButton buttonExit = new JButton();
 		panel_2.add(buttonExit);
 		buttonExit.addActionListener(new CloseActionListener());
-		buttonExit.setText("ÍË³ö");
+		buttonExit.setText("é€€å‡º");
 		
 		//
 	}
 	class DateListener extends KeyAdapter {
 		public void keyTyped(KeyEvent e) {
 			if(orderDate.getText().isEmpty()){
-				JOptionPane.showMessageDialog(null, "Ê±¼ä¸ñÊ½ÇëÊ¹ÓÃ\"2007-05-10\"¸ñÊ½");
+				JOptionPane.showMessageDialog(null, "æ—¶é—´æ ¼å¼è¯·ä½¿ç”¨\"2007-05-10\"æ ¼å¼");
 			}
 		}
 	}
@@ -236,7 +236,7 @@ public class newBookCheckIFrame extends JInternalFrame {
 			bookType.setText(table.getValueAt(selRow, 6).toString().trim());
 			
 			price.setText(table.getValueAt(selRow, 12).toString().trim());
-			if(table.getValueAt(selRow, 4).toString().trim().equals("·ñ"))//1´ú±íÃ»ÓĞÑéÊÕ
+			if(table.getValueAt(selRow, 4).toString().trim().equals("å¦"))//1ä»£è¡¨æ²¡æœ‰éªŒæ”¶
 				radioButton2.setSelected(true);
 			else
 				radioButton1.setSelected(true);
@@ -245,7 +245,7 @@ public class newBookCheckIFrame extends JInternalFrame {
 			
 		}
 	}
-	class CloseActionListener implements ActionListener {			// Ìí¼Ó¹Ø±Õ°´Å¥µÄÊÂ¼ş¼àÌıÆ÷
+	class CloseActionListener implements ActionListener {			// æ·»åŠ å…³é—­æŒ‰é’®çš„äº‹ä»¶ç›‘å¬å™¨
 		public void actionPerformed(final ActionEvent e) {
 			doDefaultCloseAction();
 		}
@@ -261,7 +261,7 @@ public class newBookCheckIFrame extends JInternalFrame {
 				String ISBNs=ISBN.getText();
 				int i=DbHelper.UpdateCheckBookOrder(ISBNs);
 				if(i==1){
-					JOptionPane.showMessageDialog(null, "ÑéÊÕ³É¹¦£¡");
+					JOptionPane.showMessageDialog(null, "éªŒæ”¶æˆåŠŸï¼");
 					Object[][] results=getFileStates(DbHelper.selectBookOrder());
 					model.setDataVector(results,columnNames);
 					table.setModel(model);
@@ -269,7 +269,7 @@ public class newBookCheckIFrame extends JInternalFrame {
 				}
 			}
 			else {
-				JOptionPane.showMessageDialog(null, "ÄúÑ¡ÔñµÄÍ¼ÊéÒÑ¾­½øĞĞ¹ıÑéÊÕ£¬ÇëÑ¡ÔñÆäËûÍ¼Êé½øĞĞÑéÊÕ");
+				JOptionPane.showMessageDialog(null, "æ‚¨é€‰æ‹©çš„å›¾ä¹¦å·²ç»è¿›è¡Œè¿‡éªŒæ”¶ï¼Œè¯·é€‰æ‹©å…¶ä»–å›¾ä¹¦è¿›è¡ŒéªŒæ”¶");
 			}
 			
 			

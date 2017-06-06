@@ -45,7 +45,7 @@ import pers.airobot.util.MapTrans;
 import pers.airobot.util.MyDocument;
 
 /**
- * Ãû³Æ£ºÍ¼ÊéĞŞ¸Ä´°Ìå
+ * åç§°ï¼šå›¾ä¹¦ä¿®æ”¹çª—ä½“
  *
  */
 public class BookModiAndDelIFrame extends JInternalFrame {
@@ -68,10 +68,10 @@ public class BookModiAndDelIFrame extends JInternalFrame {
 	private String[] columnNames;
 	//private Map<?, ?> m=MapTrans.getMap();
 
-	//È¡Êı¾İ¿âÖĞÍ¼ÊéÏà¹ØĞÅÏ¢·ÅÈë±í¸ñÖĞ
+	//å–æ•°æ®åº“ä¸­å›¾ä¹¦ç›¸å…³ä¿¡æ¯æ”¾å…¥è¡¨æ ¼ä¸­
 	private Object[][] getFileStates(List<?> list){
-		String[] columnNames = { "Í¼Êé±àºÅ", "Í¼ÊéÀà±ğ", "Í¼ÊéÃû³Æ", "×÷Õß", "ÒëÕß", "³ö°æÉÌ",
-				"³ö°æÈÕÆÚ", "¼Û¸ñ" };
+		String[] columnNames = { "å›¾ä¹¦ç¼–å·", "å›¾ä¹¦ç±»åˆ«", "å›¾ä¹¦åç§°", "ä½œè€…", "è¯‘è€…", "å‡ºç‰ˆå•†",
+				"å‡ºç‰ˆæ—¥æœŸ", "ä»·æ ¼" };
 		Object[][]results=new Object[list.size()][columnNames.length];
 		
 		for(int i=0;i<list.size();i++){
@@ -95,7 +95,7 @@ public class BookModiAndDelIFrame extends JInternalFrame {
 		getContentPane().setLayout(borderLayout);
 		setIconifiable(true);
 		setClosable(true);
-		setTitle("Í¼ÊéĞÅÏ¢ĞŞ¸Ä");
+		setTitle("å›¾ä¹¦ä¿¡æ¯ä¿®æ”¹");
 		setBounds(100, 100, 593, 406);
 
 		final JPanel panel_1 = new JPanel();
@@ -109,7 +109,7 @@ public class BookModiAndDelIFrame extends JInternalFrame {
 
 		final JButton button = new JButton();
 		button.addActionListener(new addBookActionListener());
-		button.setText("ĞŞ¸Ä");
+		button.setText("ä¿®æ”¹");
 		panel_1.add(button);
 
 //		final JButton button_2 = new JButton();
@@ -118,9 +118,9 @@ public class BookModiAndDelIFrame extends JInternalFrame {
 //				String ISBNs=ISBN.getText().trim();
 //				int i=DbHelper.Delbook(ISBNs);
 //				if(i==1){
-//					JOptionPane.showMessageDialog(null, "É¾³ı³É¹¦");
+//					JOptionPane.showMessageDialog(null, "åˆ é™¤æˆåŠŸ");
 //					Object[][] results=getFileStates(DbHelper.selectBookInfo());
-//					//×¢ÊÍ´úÂëÎªÊ¹ÓÃ±í¸ñÄ£ĞÍ
+//					//æ³¨é‡Šä»£ç ä¸ºä½¿ç”¨è¡¨æ ¼æ¨¡å‹
 //					DefaultTableModel model=new DefaultTableModel();
 ////					DefaultTableModel model = (DefaultTableModel) table.getModel();
 //					table.setModel(model);
@@ -128,7 +128,7 @@ public class BookModiAndDelIFrame extends JInternalFrame {
 //				}
 //			}
 //		});
-//		button_2.setText("É¾³ı");
+//		button_2.setText("åˆ é™¤");
 //		
 //		panel_1.add(button_2);
 
@@ -138,7 +138,7 @@ public class BookModiAndDelIFrame extends JInternalFrame {
 				doDefaultCloseAction();
 			}
 		});
-		button_1.setText("¹Ø±Õ");
+		button_1.setText("å…³é—­");
 		panel_1.add(button_1);
 
 		/*
@@ -164,12 +164,12 @@ public class BookModiAndDelIFrame extends JInternalFrame {
 		panel_2.add(scrollPane);
 
 		Object[][] results=getFileStates(DbHelper.selectBookInfo());
-		columnNames = new String[]{"Í¼Êé±àºÅ", "Í¼ÊéÀà±ğ", "Í¼ÊéÃû³Æ", "×÷Õß", "ÒëÕß", "³ö°æÉÌ", "³ö°æÈÕÆÚ",
-				"¼Û¸ñ"};
+		columnNames = new String[]{"å›¾ä¹¦ç¼–å·", "å›¾ä¹¦ç±»åˆ«", "å›¾ä¹¦åç§°", "ä½œè€…", "è¯‘è€…", "å‡ºç‰ˆå•†", "å‡ºç‰ˆæ—¥æœŸ",
+				"ä»·æ ¼"};
 		table = new JTable(results,columnNames);
 		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 		
-		//Êó±êµ¥»÷±í¸ñÖĞµÄÄÚÈİ²úÉúÊÂ¼ş,½«±í¸ñÖĞµÄÄÚÈİ·ÅÈëÎÄ±¾¿òÖĞ
+		//é¼ æ ‡å•å‡»è¡¨æ ¼ä¸­çš„å†…å®¹äº§ç”Ÿäº‹ä»¶,å°†è¡¨æ ¼ä¸­çš„å†…å®¹æ”¾å…¥æ–‡æœ¬æ¡†ä¸­
 		table.addMouseListener(new TableListener());
 
 		
@@ -187,7 +187,7 @@ public class BookModiAndDelIFrame extends JInternalFrame {
 
 		final JLabel label_2 = new JLabel();
 		label_2.setHorizontalAlignment(SwingConstants.CENTER);
-		label_2.setText("Êé       ºÅ£º");
+		label_2.setText("ä¹¦       å·ï¼š");
 		bookPanel.add(label_2);
 
 		ISBN = new JTextField();
@@ -195,7 +195,7 @@ public class BookModiAndDelIFrame extends JInternalFrame {
 		bookPanel.add(ISBN);
 		final JLabel label = new JLabel();
 		label.setHorizontalAlignment(SwingConstants.CENTER);
-		label.setText("Àà       ±ğ£º");
+		label.setText("ç±»       åˆ«ï¼š");
 		bookPanel.add(label);
 
 		bookType = new JComboBox<Item>();
@@ -214,7 +214,7 @@ public class BookModiAndDelIFrame extends JInternalFrame {
 
 		final JLabel label_1 = new JLabel();
 		label_1.setHorizontalAlignment(SwingConstants.CENTER);
-		label_1.setText("Êé    Ãû£º");
+		label_1.setText("ä¹¦    åï¼š");
 		bookPanel.add(label_1);
 
 		bookName = new JTextField();
@@ -222,7 +222,7 @@ public class BookModiAndDelIFrame extends JInternalFrame {
 
 		final JLabel label_3 = new JLabel();
 		label_3.setHorizontalAlignment(SwingConstants.CENTER);
-		label_3.setText("×÷       Õß£º");
+		label_3.setText("ä½œ       è€…ï¼š");
 		bookPanel.add(label_3);
 
 		writer = new JTextField();
@@ -230,7 +230,7 @@ public class BookModiAndDelIFrame extends JInternalFrame {
 
 		final JLabel label_2_1 = new JLabel();
 		label_2_1.setHorizontalAlignment(SwingConstants.CENTER);
-		label_2_1.setText("³ö  °æ  Éç£º");
+		label_2_1.setText("å‡º  ç‰ˆ  ç¤¾ï¼š");
 		bookPanel.add(label_2_1);
 
 		publisher = new JTextField();
@@ -238,7 +238,7 @@ public class BookModiAndDelIFrame extends JInternalFrame {
 
 		final JLabel label_4 = new JLabel();
 		label_4.setHorizontalAlignment(SwingConstants.CENTER);
-		label_4.setText("Òë    Õß£º");
+		label_4.setText("è¯‘    è€…ï¼š");
 		bookPanel.add(label_4);
 
 		translator = new JTextField();
@@ -246,7 +246,7 @@ public class BookModiAndDelIFrame extends JInternalFrame {
 
 		final JLabel label_1_1 = new JLabel();
 		label_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		label_1_1.setText("³ö °æ ÈÕ ÆÚ£º");
+		label_1_1.setText("å‡º ç‰ˆ æ—¥ æœŸï¼š");
 		bookPanel.add(label_1_1);
 
 
@@ -257,7 +257,7 @@ public class BookModiAndDelIFrame extends JInternalFrame {
 
 		final JLabel label_3_1 = new JLabel();
 		label_3_1.setHorizontalAlignment(SwingConstants.CENTER);
-		label_3_1.setText("µ¥      ¼Û£º");
+		label_3_1.setText("å•      ä»·ï¼š");
 		bookPanel.add(label_3_1);
 
 		  price=   new   JFormattedTextField();
@@ -292,34 +292,34 @@ public class BookModiAndDelIFrame extends JInternalFrame {
 	}
 	class addBookActionListener implements ActionListener {
 		public void actionPerformed(final ActionEvent e) {
-			// ĞŞ¸ÄÍ¼ÊéĞÅÏ¢±í
+			// ä¿®æ”¹å›¾ä¹¦ä¿¡æ¯è¡¨
 			if(ISBN.getText().length()==0){
-				JOptionPane.showMessageDialog(null, "ÊéºÅÎÄ±¾¿ò²»¿ÉÒÔÎª¿Õ»òÔòÊäÈëÊı×Ö²»¿ÉÒÔ´óÓÚ13¸ö");
+				JOptionPane.showMessageDialog(null, "ä¹¦å·æ–‡æœ¬æ¡†ä¸å¯ä»¥ä¸ºç©ºæˆ–åˆ™è¾“å…¥æ•°å­—ä¸å¯ä»¥å¤§äº13ä¸ª");
 				return;
 			}
 			if(ISBN.getText().length()!=13){
-				JOptionPane.showMessageDialog(null, "ÊéºÅÎÄ±¾¿òÊäÈëÎ»ÊıÎª13Î»");
+				JOptionPane.showMessageDialog(null, "ä¹¦å·æ–‡æœ¬æ¡†è¾“å…¥ä½æ•°ä¸º13ä½");
 				return;
 			}
 			if(bookName.getText().length()==0){
-				JOptionPane.showMessageDialog(null, "Í¼ÊéÃû³ÆÎÄ±¾¿ò²»¿ÉÒÔÎª¿Õ");
+				JOptionPane.showMessageDialog(null, "å›¾ä¹¦åç§°æ–‡æœ¬æ¡†ä¸å¯ä»¥ä¸ºç©º");
 				return;
 			}
 			if(writer.getText().length()==0){
-				JOptionPane.showMessageDialog(null, "×÷ÕßÎÄ±¾¿ò²»¿ÉÒÔÎª¿Õ");
+				JOptionPane.showMessageDialog(null, "ä½œè€…æ–‡æœ¬æ¡†ä¸å¯ä»¥ä¸ºç©º");
 				return;
 			}
 			if(publisher.getText().length()==0){
-				JOptionPane.showMessageDialog(null, "³ö°æÈËÎÄ±¾¿ò²»¿ÉÒÔÎª¿Õ");
+				JOptionPane.showMessageDialog(null, "å‡ºç‰ˆäººæ–‡æœ¬æ¡†ä¸å¯ä»¥ä¸ºç©º");
 				return;
 			}
-			//ÈÕÆÚÓëµ¥¼Û½øĞĞÊı×ÖÑéÖ¤´úÂë£¿
+			//æ—¥æœŸä¸å•ä»·è¿›è¡Œæ•°å­—éªŒè¯ä»£ç ï¼Ÿ
 			if(pubDate.getText().length()==0){
-				JOptionPane.showMessageDialog(null, "³ö°æÈÕÆÚÎÄ±¾¿ò²»¿ÉÒÔÎª¿Õ");
+				JOptionPane.showMessageDialog(null, "å‡ºç‰ˆæ—¥æœŸæ–‡æœ¬æ¡†ä¸å¯ä»¥ä¸ºç©º");
 				return;
 			}
 			if(price.getText().length()==0){
-				JOptionPane.showMessageDialog(null, "µ¥¼ÛÎÄ±¾¿ò²»¿ÉÒÔÎª¿Õ");
+				JOptionPane.showMessageDialog(null, "å•ä»·æ–‡æœ¬æ¡†ä¸å¯ä»¥ä¸ºç©º");
 				return;
 			}
 			
@@ -327,7 +327,7 @@ public class BookModiAndDelIFrame extends JInternalFrame {
 			
 			String ISBNs=ISBN.getText().trim();
 			
-			//·ÖÀà
+			//åˆ†ç±»
 			Object selectedItem = bookTypeModel.getSelectedItem();
 			if (selectedItem == null)
 				return;
@@ -348,9 +348,9 @@ public class BookModiAndDelIFrame extends JInternalFrame {
 			
 			if(i==1){
 
-				JOptionPane.showMessageDialog(null, "ĞŞ¸Ä³É¹¦");
+				JOptionPane.showMessageDialog(null, "ä¿®æ”¹æˆåŠŸ");
 				Object[][] results=getFileStates(DbHelper.selectBookInfo());
-				//×¢ÊÍ´úÂëÎªÊ¹ÓÃ±í¸ñÄ£ĞÍ
+				//æ³¨é‡Šä»£ç ä¸ºä½¿ç”¨è¡¨æ ¼æ¨¡å‹
 				DefaultTableModel model=new DefaultTableModel();
 //				DefaultTableModel model = (DefaultTableModel) table.getModel();
 				table.setModel(model);

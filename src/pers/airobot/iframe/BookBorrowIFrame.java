@@ -68,7 +68,7 @@ public class BookBorrowIFrame extends JInternalFrame {
 
 	private JTextField readerISBN;
 
-	private String[] columnNames = { "Êé¼®±àºÅ", "½èÊéÈÕÆÚ", "Ó¦»¹ÈÕÆÚ", "¶ÁÕß±àºÅ" };
+	private String[] columnNames = { "ä¹¦ç±ç¼–å·", "å€Ÿä¹¦æ—¥æœŸ", "åº”è¿˜æ—¥æœŸ", "è¯»è€…ç¼–å·" };
 
 	private Map<?, ?> map = MapTrans.getMap();
 
@@ -88,7 +88,7 @@ public class BookBorrowIFrame extends JInternalFrame {
 		str[3] = readerISBN.getText().trim();
 		model.addRow(str);
 	}
-	public Date getBackTime() {	//È¡»¹ÊéÊ±¼ä
+	public Date getBackTime() {	//å–è¿˜ä¹¦æ—¶é—´
 		String days = "0";
 		List<?> list2 = DbHelper.selectBookCategory(bookType.getText().trim());
 		for (int j = 0; j < list2.size(); j++) {
@@ -104,11 +104,11 @@ public class BookBorrowIFrame extends JInternalFrame {
 //		addInternalFrameListener(new InternalFrameAdapter() {
 //			public void internalFrameClosing(InternalFrameEvent e) {
 //			}
-//		});//¹Ø±Õ´°¿ÚÊ±ºòÒı·¢µÄÊÂ¼ş
+//		});//å…³é—­çª—å£æ—¶å€™å¼•å‘çš„äº‹ä»¶
 		System.out.println(user.getName());
-		setTitle("Í¼Êé½èÔÄ¹ÜÀí");
-		setIconifiable(true); // ÉèÖÃ´°Ìå¿É×îĞ¡»¯£­£­£­±ØĞë
-		setClosable(true); // ÉèÖÃ´°Ìå¿É¹Ø±Õ£­£­£­±ØĞë
+		setTitle("å›¾ä¹¦å€Ÿé˜…ç®¡ç†");
+		setIconifiable(true); // è®¾ç½®çª—ä½“å¯æœ€å°åŒ–ï¼ï¼ï¼å¿…é¡»
+		setClosable(true); // è®¾ç½®çª—ä½“å¯å…³é—­ï¼ï¼ï¼å¿…é¡»
 		setBounds(100, 100, 500, 450);
 
 		final JPanel panel = new JPanel();
@@ -144,7 +144,7 @@ public class BookBorrowIFrame extends JInternalFrame {
 		panel_3.add(panel_5);
 
 		final JLabel label = new JLabel();
-		label.setText("¶ÁÕß±àºÅ£º");
+		label.setText("è¯»è€…ç¼–å·ï¼š");
 		panel_5.add(label);
 
 		readerISBN = new JTextField();
@@ -153,7 +153,7 @@ public class BookBorrowIFrame extends JInternalFrame {
 		panel_5.add(readerISBN);
 
 		final JLabel label_1 = new JLabel();
-		label_1.setText("¶ÁÕßĞÕÃû£º");
+		label_1.setText("è¯»è€…å§“åï¼š");
 		panel_5.add(label_1);
 
 		readerName = new JTextField();
@@ -161,7 +161,7 @@ public class BookBorrowIFrame extends JInternalFrame {
 		panel_5.add(readerName);
 
 		final JLabel label_2 = new JLabel();
-		label_2.setText("¿É½èÊıÁ¿£º");
+		label_2.setText("å¯å€Ÿæ•°é‡ï¼š");
 		panel_5.add(label_2);
 
 		number = new JTextField();
@@ -169,7 +169,7 @@ public class BookBorrowIFrame extends JInternalFrame {
 		panel_5.add(number);
 
 		final JLabel label_4 = new JLabel();
-		label_4.setText("Ñº    ½ğ£º");
+		label_4.setText("æŠ¼    é‡‘ï¼š");
 		panel_5.add(label_4);
 
 		keepMoney = new JTextField();
@@ -185,7 +185,7 @@ public class BookBorrowIFrame extends JInternalFrame {
 		splitPane.setRightComponent(panel_4);
 
 		final JLabel label_5 = new JLabel();
-		label_5.setText("Êé¼®±àºÅ£º");
+		label_5.setText("ä¹¦ç±ç¼–å·ï¼š");
 		panel_4.add(label_5);
 
 		bookISBN = new JTextField();
@@ -194,7 +194,7 @@ public class BookBorrowIFrame extends JInternalFrame {
 		panel_4.add(bookISBN);
 
 		final JLabel label_6 = new JLabel();
-		label_6.setText("Êé¼®Ãû³Æ£º");
+		label_6.setText("ä¹¦ç±åç§°ï¼š");
 		panel_4.add(label_6);
 
 		bookName = new JTextField();
@@ -202,7 +202,7 @@ public class BookBorrowIFrame extends JInternalFrame {
 		panel_4.add(bookName);
 
 		final JLabel label_7 = new JLabel();
-		label_7.setText("Êé¼®Àà±ğ£º");
+		label_7.setText("ä¹¦ç±ç±»åˆ«ï¼š");
 		panel_4.add(label_7);
 
 		bookType = new JTextField();
@@ -210,7 +210,7 @@ public class BookBorrowIFrame extends JInternalFrame {
 		panel_4.add(bookType);
 
 		final JLabel label_8 = new JLabel();
-		label_8.setText("Êé¼®¼Û¸ñ£º");
+		label_8.setText("ä¹¦ç±ä»·æ ¼ï¼š");
 		panel_4.add(label_8);
 
 		price = new JTextField();
@@ -229,7 +229,7 @@ public class BookBorrowIFrame extends JInternalFrame {
 		panel_2.add(panel_7);
 
 		final JLabel label_9 = new JLabel();
-		label_9.setText("µ±Ç°Ê±¼ä£º");
+		label_9.setText("å½“å‰æ—¶é—´ï¼š");
 		panel_7.add(label_9);
 
 		todaydate = new JTextField();
@@ -240,7 +240,7 @@ public class BookBorrowIFrame extends JInternalFrame {
 		panel_7.add(todaydate);
 
 		final JLabel label_11 = new JLabel();
-		label_11.setText("²Ù×÷Ô±£º");
+		label_11.setText("æ“ä½œå‘˜ï¼š");
 		panel_7.add(label_11);
 
 		operator  =new JTextField(user.getName());
@@ -253,12 +253,12 @@ public class BookBorrowIFrame extends JInternalFrame {
 		panel_2.add(panel_8);
 
 		final JButton buttonBorrow = new JButton();
-		buttonBorrow.setText("½è³öµ±Ç°Í¼Êé");
+		buttonBorrow.setText("å€Ÿå‡ºå½“å‰å›¾ä¹¦");
 		buttonBorrow.addActionListener(new BorrowActionListener());
 		panel_8.add(buttonBorrow);
 
 		final JButton buttonClear = new JButton();
-		buttonClear.setText("Çå³ıËùÓĞ¼ÇÂ¼");
+		buttonClear.setText("æ¸…é™¤æ‰€æœ‰è®°å½•");
 		buttonClear.addActionListener(new ClearActionListener(model));
 		panel_8.add(buttonClear);
 
@@ -268,7 +268,7 @@ public class BookBorrowIFrame extends JInternalFrame {
 
 	class bookISBNListenerlostFocus extends KeyAdapter {
 		public void keyTyped(KeyEvent e) {
-			if (e.getKeyChar() == '\n') { // ÅĞ¶ÏÔÚÎÄ±¾¿òÊÇ·ñÊäÈë»Ø³µ¡£
+			if (e.getKeyChar() == '\n') { // åˆ¤æ–­åœ¨æ–‡æœ¬æ¡†æ˜¯å¦è¾“å…¥å›è½¦ã€‚
 				if (readerISBN.getText().trim().length()!=0
 						&& bookISBN.getText().trim().length()!=0) {
 					String ISBNs = bookISBN.getText().trim();
@@ -288,20 +288,20 @@ public class BookBorrowIFrame extends JInternalFrame {
 						//days = type.getDays();
 					//}
 					String readerISBNs = readerISBN.getText().trim();
-					List<?> list5 = DbHelper.selectReader(readerISBNs);// ´Ë¶ÁÕßÊÇ·ñÔÚtb_reader±íÖĞ
-					List<?> list4 = DbHelper.selectBookInfo(ISBNs);// ´ËÊéÊÇ·ñÔÚtb_bookInfo±íÖĞ
+					List<?> list5 = DbHelper.selectReader(readerISBNs);// æ­¤è¯»è€…æ˜¯å¦åœ¨tb_readerè¡¨ä¸­
+					List<?> list4 = DbHelper.selectBookInfo(ISBNs);// æ­¤ä¹¦æ˜¯å¦åœ¨tb_bookInfoè¡¨ä¸­
 					if (!readerISBNs.isEmpty() && list5.isEmpty()) {
 						JOptionPane.showMessageDialog(null,
-								"´Ë¶ÁÕß±àºÅÃ»ÓĞ×¢²á£¬²éÑ¯ÊäÈë¶ÁÕß±àºÅÊÇ·ñÓĞÎó£¡");
+								"æ­¤è¯»è€…ç¼–å·æ²¡æœ‰æ³¨å†Œï¼ŒæŸ¥è¯¢è¾“å…¥è¯»è€…ç¼–å·æ˜¯å¦æœ‰è¯¯ï¼");
 						return;
 					}
 					if (list4.isEmpty() && !ISBNs.isEmpty()) {
 						JOptionPane.showMessageDialog(null,
-								"±¾Í¼Êé¹İÃ»ÓĞ´ËÊé£¬²éÑ¯ÊäÈëÍ¼Êé±àºÅÊÇ·ñÓĞÎó£¡");
+								"æœ¬å›¾ä¹¦é¦†æ²¡æœ‰æ­¤ä¹¦ï¼ŒæŸ¥è¯¢è¾“å…¥å›¾ä¹¦ç¼–å·æ˜¯å¦æœ‰è¯¯ï¼");
 						return;
 					}
 					if (Integer.parseInt(number.getText().trim()) <= 0) {
-						JOptionPane.showMessageDialog(null, "½èÊéÁ¿ÒÑ¾­³¬¹ı×î´ó½èÊéÁ¿£¡");
+						JOptionPane.showMessageDialog(null, "å€Ÿä¹¦é‡å·²ç»è¶…è¿‡æœ€å¤§å€Ÿä¹¦é‡ï¼");
 						return;
 					}
 
@@ -311,7 +311,7 @@ public class BookBorrowIFrame extends JInternalFrame {
 				}
 
 				else
-					JOptionPane.showMessageDialog(null, "ÇëÊäÈë¶ÁÕßÌõĞÎÂë£¡");
+					JOptionPane.showMessageDialog(null, "è¯·è¾“å…¥è¯»è€…æ¡å½¢ç ï¼");
 			}
 
 		}
@@ -319,20 +319,20 @@ public class BookBorrowIFrame extends JInternalFrame {
 
 	class ISBNListenerlostFocus extends KeyAdapter {
 		public void keyTyped(KeyEvent e) {
-			if (e.getKeyChar() == '\n') { // ÅĞ¶ÏÔÚÎÄ±¾¿òÊÇ·ñÊäÈë»Ø³µ¡£
+			if (e.getKeyChar() == '\n') { // åˆ¤æ–­åœ¨æ–‡æœ¬æ¡†æ˜¯å¦è¾“å…¥å›è½¦ã€‚
 				String ISBNs = readerISBN.getText().trim();
 
 				List<?> list = DbHelper.selectReader(ISBNs);
 				if (list.isEmpty() && !ISBNs.isEmpty()) {
 					JOptionPane.showMessageDialog(null,
-							"´Ë¶ÁÕß±àºÅÃ»ÓĞ×¢²á£¬²éÑ¯ÊäÈë¶ÁÕß±àºÅÊÇ·ñÓĞÎó£¡");
+							"æ­¤è¯»è€…ç¼–å·æ²¡æœ‰æ³¨å†Œï¼ŒæŸ¥è¯¢è¾“å…¥è¯»è€…ç¼–å·æ˜¯å¦æœ‰è¯¯ï¼");
 				}
 				for (int i = 0; i < list.size(); i++) {
 					Reader reader = (Reader) list.get(i);
 					readerName.setText(reader.getName());
 					number.setText(reader.getMaxNum());
 					keepMoney.setText(reader.getKeepMoney() + "");
-					System.out.println("¶ÁÕß¿É½èÊéÁ¿" + number.getText().trim());
+					System.out.println("è¯»è€…å¯å€Ÿä¹¦é‡" + number.getText().trim());
 				}
 			}
 		}
@@ -352,7 +352,7 @@ public class BookBorrowIFrame extends JInternalFrame {
 			//System.out.println(java.sql.Timestamp.valueOf(backDate));
 			int i=DbHelper.InsertBookBorrow(bookISBNs, readerISBNs, operatorId, java.sql.Timestamp.valueOf(borrowDate), java.sql.Timestamp.valueOf(backDate));
 			if(i==1){
-				JOptionPane.showMessageDialog(null, "Í¼Êé½èÔÄÍê³É£¡");
+				JOptionPane.showMessageDialog(null, "å›¾ä¹¦å€Ÿé˜…å®Œæˆï¼");
 				doDefaultCloseAction();
 			}
 		}
@@ -379,7 +379,7 @@ public class BookBorrowIFrame extends JInternalFrame {
 				keepMoney.setText("");
 			}
 			else {
-				JOptionPane.showMessageDialog(null, "±í¸ñÖĞÔİÊ±Ã»ÓĞÊı¾İ£¬Çë½øĞĞ½èÔÄ²Ù×÷");
+				JOptionPane.showMessageDialog(null, "è¡¨æ ¼ä¸­æš‚æ—¶æ²¡æœ‰æ•°æ®ï¼Œè¯·è¿›è¡Œå€Ÿé˜…æ“ä½œ");
 			}
 		}
 	}

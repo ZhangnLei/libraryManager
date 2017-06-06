@@ -1,34 +1,26 @@
 package pers.airobot.iframe;
 
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-//import java.awt.FlowLayout;
-//import java.awt.Insets;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-//import java.awt.event.MouseAdapter;
-//import java.awt.event.MouseEvent;
-//import java.util.Map;
-import java.util.List;
-
-//import javax.swing.DefaultComboBoxModel;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-//import javax.swing.JDesktopPane;
-import javax.swing.JInternalFrame;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTabbedPane;
-import javax.swing.JTable;
-import javax.swing.JTextField;
-//import javax.swing.JToolBar;
-//import javax.swing.border.EtchedBorder;
-import javax.swing.border.TitledBorder;
-//import javax.swing.table.DefaultTableModel;
-
 import pers.airobot.DbHelper.DbHelper;
 import pers.airobot.model.BookInfo;
 import pers.airobot.util.MapTrans;
+
+import javax.swing.*;
+import javax.swing.border.TitledBorder;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.List;
+
+//import java.awt.FlowLayout;
+//import java.awt.Insets;
+//import java.awt.event.MouseAdapter;
+//import java.awt.event.MouseEvent;
+//import java.util.Map;
+//import javax.swing.DefaultComboBoxModel;
+//import javax.swing.JDesktopPane;
+//import javax.swing.JToolBar;
+//import javax.swing.border.EtchedBorder;
+//import javax.swing.table.DefaultTableModel;
 
 //import java.awt.*;
 
@@ -62,7 +54,7 @@ public class BookSearchIFrame extends JInternalFrame {
 	/**
 	 * Create the frame
 	 */
-	String booksearch[] = { "±àºÅ", "·ÖÀà", "Ãû³Æ", "×÷Õß", "ÒëÕß","³ö°æÉç",  "³ö°æÈÕÆÚ", "µ¥¼Û" };
+	String booksearch[] = { "ç¼–å·", "åˆ†ç±»", "åç§°", "ä½œè€…", "è¯‘è€…","å‡ºç‰ˆç¤¾",  "å‡ºç‰ˆæ—¥æœŸ", "å•ä»·" };
 
 	private Object[][] getselect(List<?> list) {
 		Object[][] s = new Object[list.size()][8];
@@ -97,7 +89,7 @@ public class BookSearchIFrame extends JInternalFrame {
 		super();
 		setIconifiable(true);
 		setClosable(true);
-		setTitle("Í¼Êé²éÑ¯");
+		setTitle("å›¾ä¹¦æŸ¥è¯¢");
 		setBounds(100, 100, 500, 400);
 
 		
@@ -109,14 +101,14 @@ public class BookSearchIFrame extends JInternalFrame {
 
 		final JPanel panel_1 = new JPanel();
 		panel_1.setLayout(new BorderLayout());
-		tabbedPane.addTab("Ìõ¼ş²éÑ¯", null, panel_1, null);
+		tabbedPane.addTab("æ¡ä»¶æŸ¥è¯¢", null, panel_1, null);
 
 		final JPanel panel_1_1 = new JPanel();
-		panel_1_1.setBorder(new TitledBorder(null, "ÇëÑ¡Ôñ²éÑ¯ÏîÄ¿", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, null));
+		panel_1_1.setBorder(new TitledBorder(null, "è¯·é€‰æ‹©æŸ¥è¯¢é¡¹ç›®", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, null));
 		panel_1_1.setPreferredSize(new Dimension(0, 50));
 		panel_1.add(panel_1_1, BorderLayout.NORTH);
         choice=new JComboBox<String>();
-		String[] array={"Í¼ÊéÃû³Æ","Í¼Êé×÷Õß"};
+		String[] array={"å›¾ä¹¦åç§°","å›¾ä¹¦ä½œè€…"};
 		for(int i=0;i<array.length;i++){
 			choice.addItem(array[i]);
 			
@@ -127,7 +119,7 @@ public class BookSearchIFrame extends JInternalFrame {
 		panel_1_1.add(textField_1);
         
 		final JPanel panel = new JPanel();
-		panel.setBorder(new TitledBorder(null, "²éÑ¯½á¹ûÏÔÊ¾", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, null));
+		panel.setBorder(new TitledBorder(null, "æŸ¥è¯¢ç»“æœæ˜¾ç¤º", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, null));
 		panel_1.add(panel);
 
 		
@@ -140,21 +132,21 @@ public class BookSearchIFrame extends JInternalFrame {
 		panel_1.add(panel_2_1, BorderLayout.SOUTH);
 
 		final JButton button = new JButton();
-		button.setText("²éÑ¯");
+		button.setText("æŸ¥è¯¢");
 		panel_2_1.add(button);
 
 		 button.addActionListener(new ActionListener(){
 
 				public void actionPerformed(ActionEvent arg0) {
 					String name=(String)choice.getSelectedItem();
-					if(name.equals("Í¼ÊéÃû³Æ")){
+					if(name.equals("å›¾ä¹¦åç§°")){
 						
 						Object[][] results=getselect(DbHelper.selectbookmohu(textField_1.getText()));
 						table_2 = new JTable(results,booksearch);
 						
 						scrollPane_1.setViewportView(table_2);
 					}
-					else if(name.equals("Í¼Êé×÷Õß")){
+					else if(name.equals("å›¾ä¹¦ä½œè€…")){
 						
 						Object[][] results=getselect(DbHelper.selectbookmohuwriter(textField_1.getText()));
 						table_2 = new JTable(results,booksearch);
@@ -168,27 +160,27 @@ public class BookSearchIFrame extends JInternalFrame {
 		
 		
 		final JButton button_1 = new JButton();
-		button_1.setText("ÍË³ö");
+		button_1.setText("é€€å‡º");
 		panel_2_1.add(button_1);
 		button_1.addActionListener(new CloseActionListener());
 		
 		setVisible(true);
 		
 		final JPanel panel_2 = new JPanel();
-		tabbedPane.addTab("ÏÔÊ¾Í¼ÊéÈ«²¿ĞÅÏ¢", null, panel_2, null);
+		tabbedPane.addTab("æ˜¾ç¤ºå›¾ä¹¦å…¨éƒ¨ä¿¡æ¯", null, panel_2, null);
          
 		 scrollPane = new JScrollPane();
 		scrollPane.setPreferredSize(new Dimension(450, 250));
 		panel_2.add(scrollPane);
 		
 		Object[][] results=getselect(DbHelper.selectbookserch());
-		String [] booksearch = { "±àºÅ", "·ÖÀà", "Ãû³Æ", "×÷Õß", "ÒëÕß","³ö°æÉç",  "³ö°æÈÕÆÚ", "µ¥¼Û" };
+		String [] booksearch = { "ç¼–å·", "åˆ†ç±»", "åç§°", "ä½œè€…", "è¯‘è€…","å‡ºç‰ˆç¤¾",  "å‡ºç‰ˆæ—¥æœŸ", "å•ä»·" };
 		table_1 = new JTable(results,booksearch);
 		
 		scrollPane.setViewportView(table_1);
 		
 		}
-	class CloseActionListener implements ActionListener {			// Ìí¼Ó¹Ø±Õ°´Å¥µÄÊÂ¼ş¼àÌıÆ÷
+	class CloseActionListener implements ActionListener {			// æ·»åŠ å…³é—­æŒ‰é’®çš„äº‹ä»¶ç›‘å¬å™¨
 		public void actionPerformed(final ActionEvent e) {
 			doDefaultCloseAction();
 		}

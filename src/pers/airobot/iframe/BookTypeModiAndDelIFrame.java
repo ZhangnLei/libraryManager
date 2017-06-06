@@ -39,7 +39,7 @@ public class BookTypeModiAndDelIFrame extends JInternalFrame {
 	private JTextField BookTypeId;
 	private JTable table;
 	//private String[] array;
-	private String[] columnNames={ "Í¼ÊéÀà±ğ±àºÅ", "Í¼ÊéÀà±ğÃû³Æ", "¿É½èÌìÊı","·£¿î"};
+	private String[] columnNames={ "å›¾ä¹¦ç±»åˆ«ç¼–å·", "å›¾ä¹¦ç±»åˆ«åç§°", "å¯å€Ÿå¤©æ•°","ç½šæ¬¾"};
 	DefaultComboBoxModel<Item> bookTypeModel;
 	DefaultTableModel model;
 	Map<?, ?> map;
@@ -63,7 +63,7 @@ public class BookTypeModiAndDelIFrame extends JInternalFrame {
 	 */
 	public BookTypeModiAndDelIFrame() {
 		super();
-		setTitle("Í¼ÊéÀà±ğĞŞ¸Ä");
+		setTitle("å›¾ä¹¦ç±»åˆ«ä¿®æ”¹");
 		setBounds(100, 100, 500, 350);
 		setIconifiable(true);
 		setClosable(true);
@@ -105,7 +105,7 @@ public class BookTypeModiAndDelIFrame extends JInternalFrame {
 		panel_2.setPreferredSize(new Dimension(400, 43));
 
 		final JLabel label = new JLabel();
-		label.setText("Àà±ğ±àºÅ£º");
+		label.setText("ç±»åˆ«ç¼–å·ï¼š");
 		panel_2.add(label);
 
 		BookTypeId = new JTextField();
@@ -113,14 +113,14 @@ public class BookTypeModiAndDelIFrame extends JInternalFrame {
 		panel_2.add(BookTypeId);
 
 		final JLabel label_1 = new JLabel();
-		label_1.setText("Àà±ğÃû³Æ£º");
+		label_1.setText("ç±»åˆ«åç§°ï¼š");
 		panel_2.add(label_1);
 		
 	
 		comboBox = new JComboBox<Item>();
 		bookTypeModel= (DefaultComboBoxModel<Item>)comboBox.getModel();
 		
-		//´ÓÊı¾İ¿âÖĞÈ¡³öÍ¼ÊéÀà±ğ
+		//ä»æ•°æ®åº“ä¸­å–å‡ºå›¾ä¹¦ç±»åˆ«
 		List<?> list=DbHelper.selectBookCategory();
 		for(int i=0;i<list.size();i++){
 			BookType booktype=(BookType)list.get(i);
@@ -133,14 +133,14 @@ public class BookTypeModiAndDelIFrame extends JInternalFrame {
 		panel_2.add(comboBox);
 
 		final JLabel label_2 = new JLabel();
-		label_2.setText("¿É½èÌìÊı£º");
+		label_2.setText("å¯å€Ÿå¤©æ•°ï¼š");
 		panel_2.add(label_2);
 
 		days = new JTextField();
 		panel_2.add(days);
 		
 		final JLabel label_3 = new JLabel();
-		label_3.setText("·£¿î£º");
+		label_3.setText("ç½šæ¬¾ï¼š");
 		panel_2.add(label_3);
 		
 		fk = new JTextField();
@@ -150,12 +150,12 @@ public class BookTypeModiAndDelIFrame extends JInternalFrame {
 		panel_1.add(panel_4);
 
 		final JButton buttonMod = new JButton();
-		buttonMod.setText("ĞŞ¸Ä");
+		buttonMod.setText("ä¿®æ”¹");
 		buttonMod.addActionListener(new ButtonAddListener());
 		panel_4.add(buttonMod);
 
 		final JButton buttonExit = new JButton();
-		buttonExit.setText("ÍË³ö");
+		buttonExit.setText("é€€å‡º");
 		buttonExit.addActionListener(new CloseActionListener());
 		panel_4.add(buttonExit);
 		setVisible(true);
@@ -180,7 +180,7 @@ public class BookTypeModiAndDelIFrame extends JInternalFrame {
 			int i=DbHelper.UpdatebookType(BookTypeId.getText().trim(),selectedItem.toString(), days.getText().trim(),fk.getText().trim());
 			System.out.println(i);
 			if(i==1){
-				JOptionPane.showMessageDialog(null, "ĞŞ¸Ä³É¹¦");
+				JOptionPane.showMessageDialog(null, "ä¿®æ”¹æˆåŠŸ");
 				Object[][] results=getFileStates(DbHelper.selectBookCategory());
 				model.setDataVector(results,columnNames);
 				table.setModel(model);
@@ -192,14 +192,14 @@ public class BookTypeModiAndDelIFrame extends JInternalFrame {
 		public void actionPerformed(ActionEvent e){
 			int i=DbHelper.DelbookType(BookTypeId.getText().trim());
 			if(i==1){
-				JOptionPane.showMessageDialog(null, "É¾³ı³É¹¦");
+				JOptionPane.showMessageDialog(null, "åˆ é™¤æˆåŠŸ");
 				Object[][] results=getFileStates(DbHelper.selectBookCategory());
 				model.setDataVector(results,columnNames);
 				table.setModel(model);
 			}
 		}
 	}*/
-	class CloseActionListener implements ActionListener {			// Ìí¼Ó¹Ø±Õ°´Å¥µÄÊÂ¼ş¼àÌıÆ÷
+	class CloseActionListener implements ActionListener {			// æ·»åŠ å…³é—­æŒ‰é’®çš„äº‹ä»¶ç›‘å¬å™¨
 		public void actionPerformed(final ActionEvent e) {
 			doDefaultCloseAction();
 		}

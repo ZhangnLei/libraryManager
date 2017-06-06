@@ -8,27 +8,27 @@ import java.util.HashMap;
 import java.util.Map;
 //import pers.airobot.util.*;
 /**
- * ²Ëµ¥ºÍ°´Å¥µÄAction¶ÔÏó
+ * èœå•å’ŒæŒ‰é’®çš„Actionå¯¹è±¡
  * 
  */
 public class MenuActions {
-	private static Map<String, JInternalFrame> frames; // ×Ó´°Ìå¼¯ºÏ
+	private static Map<String, JInternalFrame> frames; // å­çª—ä½“é›†åˆ
 
-	public static PasswordModiAction MODIFY_PASSWORD; // ĞŞ¸ÄÃÜÂë´°Ìå¶¯×÷
-	public static UserModiAction USER_MODIFY; // ĞŞ¸ÄÓÃ»§×ÊÁÏ´°Ìå¶¯×÷
-	public static UserAddAction USER_ADD; // ÓÃ»§Ìí¼Ó´°Ìå¶¯×÷
-	public static BookSearchAction BOOK_SEARCH; // Í¼ÊéËÑË÷´°Ìå¶¯×÷
-	public static GiveBackAction GIVE_BACK; // Í¼Êé¹é»¹´°Ìå¶¯×÷
-	public static BorrowAction BORROW; // Í¼Êé½èÔÄ´°Ìå¶¯×÷
-	public static CheckAndAcceptNewBookAction NEWBOOK_CHECK_ACCEPT;// ĞŞ¸ÄÃÜÂë¶¯×÷
-	public static BoodOrderAction NEWBOOK_ORDER; // ĞÂÊé¶¨¹º´°Ìå¶¯×÷
-	public static BookTypeModiAction BOOKTYPE_MODIFY; // Í¼ÊéÀàĞÍĞŞ¸Ä´°Ìå¶¯×÷
-	public static BookTypeAddAction BOOKTYPE_ADD; // Í¼ÊéÀàĞÍÌí¼Ó´°Ìå¶¯×÷
-	public static ReaderModiAction READER_MODIFY; // ¶ÁÕßĞÅÏ¢ĞŞ¸Ä´°Ìå¶¯×÷
-	public static ReaderAddAction READER_ADD; // ¶ÁÕßĞÅÏ¢Ìí¼Ó´°Ìå¶¯×÷
-	public static BookModiAction BOOK_MODIFY; // Í¼ÊéĞÅÏ¢ĞŞ¸Ä´°Ìå¶¯×÷
-	public static BookAddAction BOOK_ADD; // Í¼ÊéĞÅÏ¢Ìí¼Ó´°Ìå¶¯×÷
-	public static ExitAction EXIT; // ÏµÍ³ÍË³ö¶¯×÷
+	public static PasswordModiAction MODIFY_PASSWORD; // ä¿®æ”¹å¯†ç çª—ä½“åŠ¨ä½œ
+	public static UserModiAction USER_MODIFY; // ä¿®æ”¹ç”¨æˆ·èµ„æ–™çª—ä½“åŠ¨ä½œ
+	public static UserAddAction USER_ADD; // ç”¨æˆ·æ·»åŠ çª—ä½“åŠ¨ä½œ
+	public static BookSearchAction BOOK_SEARCH; // å›¾ä¹¦æœç´¢çª—ä½“åŠ¨ä½œ
+	public static GiveBackAction GIVE_BACK; // å›¾ä¹¦å½’è¿˜çª—ä½“åŠ¨ä½œ
+	public static BorrowAction BORROW; // å›¾ä¹¦å€Ÿé˜…çª—ä½“åŠ¨ä½œ
+	public static CheckAndAcceptNewBookAction NEWBOOK_CHECK_ACCEPT;// ä¿®æ”¹å¯†ç åŠ¨ä½œ
+	public static BoodOrderAction NEWBOOK_ORDER; // æ–°ä¹¦å®šè´­çª—ä½“åŠ¨ä½œ
+	public static BookTypeModiAction BOOKTYPE_MODIFY; // å›¾ä¹¦ç±»å‹ä¿®æ”¹çª—ä½“åŠ¨ä½œ
+	public static BookTypeAddAction BOOKTYPE_ADD; // å›¾ä¹¦ç±»å‹æ·»åŠ çª—ä½“åŠ¨ä½œ
+	public static ReaderModiAction READER_MODIFY; // è¯»è€…ä¿¡æ¯ä¿®æ”¹çª—ä½“åŠ¨ä½œ
+	public static ReaderAddAction READER_ADD; // è¯»è€…ä¿¡æ¯æ·»åŠ çª—ä½“åŠ¨ä½œ
+	public static BookModiAction BOOK_MODIFY; // å›¾ä¹¦ä¿¡æ¯ä¿®æ”¹çª—ä½“åŠ¨ä½œ
+	public static BookAddAction BOOK_ADD; // å›¾ä¹¦ä¿¡æ¯æ·»åŠ çª—ä½“åŠ¨ä½œ
+	public static ExitAction EXIT; // ç³»ç»Ÿé€€å‡ºåŠ¨ä½œ
 
 
 	static {
@@ -57,18 +57,18 @@ public class MenuActions {
 		 */
 		private static final long serialVersionUID = 1L;
 		PasswordModiAction() {
-			putValue(Action.NAME,"¸ü¸Ä¿ÚÁî");
-			putValue(Action.LONG_DESCRIPTION, "ĞŞ¸Äµ±Ç°ÓÃ»§ÃÜÂë");
-			putValue(Action.SHORT_DESCRIPTION, "¸ü»»¿ÚÁî");//ÔÚ¡°¸ü¸Ä¿ÚÁî¡±ÌáÊ¾ÖĞÏÔÊ¾µÄÎÄ×Ö
+			putValue(Action.NAME,"æ›´æ”¹å£ä»¤");
+			putValue(Action.LONG_DESCRIPTION, "ä¿®æ”¹å½“å‰ç”¨æˆ·å¯†ç ");
+			putValue(Action.SHORT_DESCRIPTION, "æ›´æ¢å£ä»¤");//åœ¨â€œæ›´æ”¹å£ä»¤â€æç¤ºä¸­æ˜¾ç¤ºçš„æ–‡å­—
 			//putValue(Action.SMALL_ICON,CreatecdIcon.add("bookAddtb.jpg"));
-			//½«Í¼±ê´æ´¢µ½¶¯×÷¶ÔÏóÖĞ
-			//setEnabled(false);//Ê¹¶¯×÷½ûÓÃ
+			//å°†å›¾æ ‡å­˜å‚¨åˆ°åŠ¨ä½œå¯¹è±¡ä¸­
+			//setEnabled(false);//ä½¿åŠ¨ä½œç¦ç”¨
 		}
 		public void actionPerformed(ActionEvent e) {
-			if (!frames.containsKey("¸ü¸ÄÃÜÂë")||frames.get("¸ü¸ÄÃÜÂë").isClosed()) {
+			if (!frames.containsKey("æ›´æ”¹å¯†ç ")||frames.get("æ›´æ”¹å¯†ç ").isClosed()) {
 				ChangePwd iframe=new ChangePwd();
-				frames.put("¸ü¸ÄÃÜÂë", iframe);
-				Library.addIFame(frames.get("¸ü¸ÄÃÜÂë"));
+				frames.put("æ›´æ”¹å¯†ç ", iframe);
+				Library.addIFame(frames.get("æ›´æ”¹å¯†ç "));
 			}
 		}
 	}
@@ -79,15 +79,15 @@ public class MenuActions {
 		 */
 		private static final long serialVersionUID = 1L;
 		UserModiAction() {
-			super("ÓÃ»§ĞŞ¸ÄÓëÉ¾³ı", null);
-			putValue(Action.LONG_DESCRIPTION, "ĞŞ¸ÄºÍÉ¾³ıÓÃ»§ĞÅÏ¢");
-			putValue(Action.SHORT_DESCRIPTION, "ÓÃ»§ĞŞ¸ÄÓëÉ¾³ı");
+			super("ç”¨æˆ·ä¿®æ”¹ä¸åˆ é™¤", null);
+			putValue(Action.LONG_DESCRIPTION, "ä¿®æ”¹å’Œåˆ é™¤ç”¨æˆ·ä¿¡æ¯");
+			putValue(Action.SHORT_DESCRIPTION, "ç”¨æˆ·ä¿®æ”¹ä¸åˆ é™¤");
 		}
 		public void actionPerformed(ActionEvent e) {
-			if (!frames.containsKey("ÓÃ»§ĞÅÏ¢ĞŞ¸ÄÓëÉ¾³ı")||frames.get("ÓÃ»§ĞÅÏ¢ĞŞ¸ÄÓëÉ¾³ı").isClosed()) {
+			if (!frames.containsKey("ç”¨æˆ·ä¿¡æ¯ä¿®æ”¹ä¸åˆ é™¤")||frames.get("ç”¨æˆ·ä¿¡æ¯ä¿®æ”¹ä¸åˆ é™¤").isClosed()) {
 				UserModiAndDelIFrame iframe=new UserModiAndDelIFrame();
-				frames.put("ÓÃ»§ĞÅÏ¢ĞŞ¸ÄÓëÉ¾³ı", iframe);
-				Library.addIFame(frames.get("ÓÃ»§ĞÅÏ¢ĞŞ¸ÄÓëÉ¾³ı"));
+				frames.put("ç”¨æˆ·ä¿¡æ¯ä¿®æ”¹ä¸åˆ é™¤", iframe);
+				Library.addIFame(frames.get("ç”¨æˆ·ä¿¡æ¯ä¿®æ”¹ä¸åˆ é™¤"));
 			}
 		}
 	}
@@ -98,15 +98,15 @@ public class MenuActions {
 		 */
 		private static final long serialVersionUID = 1L;
 		UserAddAction() {
-			super("ÓÃ»§Ìí¼Ó", null);
-			putValue(Action.LONG_DESCRIPTION, "Ìí¼ÓĞÂµÄÓÃ»§");
-			putValue(Action.SHORT_DESCRIPTION, "ÓÃ»§Ìí¼Ó");
+			super("ç”¨æˆ·æ·»åŠ ", null);
+			putValue(Action.LONG_DESCRIPTION, "æ·»åŠ æ–°çš„ç”¨æˆ·");
+			putValue(Action.SHORT_DESCRIPTION, "ç”¨æˆ·æ·»åŠ ");
 		}
 		public void actionPerformed(ActionEvent e) {
-			if (!frames.containsKey("ÓÃ»§ĞÅÏ¢Ìí¼Ó")||frames.get("ÓÃ»§ĞÅÏ¢Ìí¼Ó").isClosed()) {
+			if (!frames.containsKey("ç”¨æˆ·ä¿¡æ¯æ·»åŠ ")||frames.get("ç”¨æˆ·ä¿¡æ¯æ·»åŠ ").isClosed()) {
 				UserAddIFrame iframe=new UserAddIFrame();
-				frames.put("ÓÃ»§ĞÅÏ¢Ìí¼Ó", iframe);
-				Library.addIFame(frames.get("ÓÃ»§ĞÅÏ¢Ìí¼Ó"));
+				frames.put("ç”¨æˆ·ä¿¡æ¯æ·»åŠ ", iframe);
+				Library.addIFame(frames.get("ç”¨æˆ·ä¿¡æ¯æ·»åŠ "));
 			}
 			
 		}
@@ -118,15 +118,15 @@ public class MenuActions {
 		 */
 		private static final long serialVersionUID = 1L;
 		BookSearchAction() {
-			super("Í¼ÊéËÑË÷", null);
-			putValue(Action.LONG_DESCRIPTION, "ËÑË÷Èë¿âµÄÍ¼ÊéĞÅÏ¢");
-			putValue(Action.SHORT_DESCRIPTION, "Í¼ÊéËÑË÷");
+			super("å›¾ä¹¦æœç´¢", null);
+			putValue(Action.LONG_DESCRIPTION, "æœç´¢å…¥åº“çš„å›¾ä¹¦ä¿¡æ¯");
+			putValue(Action.SHORT_DESCRIPTION, "å›¾ä¹¦æœç´¢");
 		}
 		public void actionPerformed(ActionEvent e) {
-			if (!frames.containsKey("Í¼Êé²éÑ¯")||frames.get("Í¼Êé²éÑ¯").isClosed()) {
+			if (!frames.containsKey("å›¾ä¹¦æŸ¥è¯¢")||frames.get("å›¾ä¹¦æŸ¥è¯¢").isClosed()) {
 				BookSearchIFrame iframe=new BookSearchIFrame();
-				frames.put("Í¼Êé²éÑ¯", iframe);
-				Library.addIFame(frames.get("Í¼Êé²éÑ¯"));
+				frames.put("å›¾ä¹¦æŸ¥è¯¢", iframe);
+				Library.addIFame(frames.get("å›¾ä¹¦æŸ¥è¯¢"));
 			}
 		}
 	}
@@ -137,15 +137,15 @@ public class MenuActions {
 		 */
 		private static final long serialVersionUID = 1L;
 		GiveBackAction() {
-			super("Í¼Êé¹é»¹", null);
-			putValue(Action.LONG_DESCRIPTION, "¹é»¹½èÔÄµÄÍ¼Êé");
-			putValue(Action.SHORT_DESCRIPTION, "Í¼Êé¹é»¹");
+			super("å›¾ä¹¦å½’è¿˜", null);
+			putValue(Action.LONG_DESCRIPTION, "å½’è¿˜å€Ÿé˜…çš„å›¾ä¹¦");
+			putValue(Action.SHORT_DESCRIPTION, "å›¾ä¹¦å½’è¿˜");
 		}
 		public void actionPerformed(ActionEvent e) {
-			if (!frames.containsKey("Í¼Êé¹é»¹¹ÜÀí")||frames.get("Í¼Êé¹é»¹¹ÜÀí").isClosed()) {
+			if (!frames.containsKey("å›¾ä¹¦å½’è¿˜ç®¡ç†")||frames.get("å›¾ä¹¦å½’è¿˜ç®¡ç†").isClosed()) {
 				BookBackIFrame iframe=new BookBackIFrame();
-				frames.put("Í¼Êé¹é»¹¹ÜÀí", iframe);
-				Library.addIFame(frames.get("Í¼Êé¹é»¹¹ÜÀí"));
+				frames.put("å›¾ä¹¦å½’è¿˜ç®¡ç†", iframe);
+				Library.addIFame(frames.get("å›¾ä¹¦å½’è¿˜ç®¡ç†"));
 			}
 		}
 	}
@@ -156,15 +156,15 @@ public class MenuActions {
 		 */
 		private static final long serialVersionUID = 1L;
 		BorrowAction() {
-			super("Í¼Êé½èÔÄ", null);
-			putValue(Action.LONG_DESCRIPTION, "´ÓÍ¼Êé¹İ½èÔÄÍ¼Êé");
-			putValue(Action.SHORT_DESCRIPTION, "Í¼Êé½èÔÄ");
+			super("å›¾ä¹¦å€Ÿé˜…", null);
+			putValue(Action.LONG_DESCRIPTION, "ä»å›¾ä¹¦é¦†å€Ÿé˜…å›¾ä¹¦");
+			putValue(Action.SHORT_DESCRIPTION, "å›¾ä¹¦å€Ÿé˜…");
 		}
 		public void actionPerformed(ActionEvent e) {
-			if (!frames.containsKey("Í¼Êé½èÔÄ¹ÜÀí")||frames.get("Í¼Êé½èÔÄ¹ÜÀí").isClosed()) {
+			if (!frames.containsKey("å›¾ä¹¦å€Ÿé˜…ç®¡ç†")||frames.get("å›¾ä¹¦å€Ÿé˜…ç®¡ç†").isClosed()) {
 				BookBorrowIFrame iframe=new BookBorrowIFrame();
-				frames.put("Í¼Êé½èÔÄ¹ÜÀí", iframe);
-				Library.addIFame(frames.get("Í¼Êé½èÔÄ¹ÜÀí"));
+				frames.put("å›¾ä¹¦å€Ÿé˜…ç®¡ç†", iframe);
+				Library.addIFame(frames.get("å›¾ä¹¦å€Ÿé˜…ç®¡ç†"));
 			}
 		}
 	}
@@ -175,16 +175,16 @@ public class MenuActions {
 		 */
 		private static final long serialVersionUID = 1L;
 		CheckAndAcceptNewBookAction() {
-			super("ÑéÊÕĞÂÊé", null);
-			putValue(Action.LONG_DESCRIPTION, "ÑéÊÕ¶©ÔÄµÄĞÂÍ¼Êé");
-			putValue(Action.SHORT_DESCRIPTION, "ÑéÊÕĞÂÊé");
+			super("éªŒæ”¶æ–°ä¹¦", null);
+			putValue(Action.LONG_DESCRIPTION, "éªŒæ”¶è®¢é˜…çš„æ–°å›¾ä¹¦");
+			putValue(Action.SHORT_DESCRIPTION, "éªŒæ”¶æ–°ä¹¦");
 		}
 		public void actionPerformed(ActionEvent e) {
 			
-			if (!frames.containsKey("Í¼ÊéÑéÊÕ")||frames.get("Í¼ÊéÑéÊÕ").isClosed()) {
+			if (!frames.containsKey("å›¾ä¹¦éªŒæ”¶")||frames.get("å›¾ä¹¦éªŒæ”¶").isClosed()) {
 				newBookCheckIFrame iframe=new newBookCheckIFrame();
-				frames.put("Í¼ÊéÑéÊÕ", iframe);
-				Library.addIFame(frames.get("Í¼ÊéÑéÊÕ"));
+				frames.put("å›¾ä¹¦éªŒæ”¶", iframe);
+				Library.addIFame(frames.get("å›¾ä¹¦éªŒæ”¶"));
 			}
 		}
 	}
@@ -195,16 +195,16 @@ public class MenuActions {
 		 */
 		private static final long serialVersionUID = 1L;
 		BoodOrderAction() {
-			super("ĞÂÊé¶¨¹º", null);
-			putValue(Action.LONG_DESCRIPTION, "¶¨¹ºĞÂµÄÍ¼Êé");
-			putValue(Action.SHORT_DESCRIPTION, "ĞÂÊé¶¨¹º");
+			super("æ–°ä¹¦å®šè´­", null);
+			putValue(Action.LONG_DESCRIPTION, "å®šè´­æ–°çš„å›¾ä¹¦");
+			putValue(Action.SHORT_DESCRIPTION, "æ–°ä¹¦å®šè´­");
 		}
 		public void actionPerformed(ActionEvent e) {
 			
-			if (!frames.containsKey("ĞÂÊé¶©¹º¹ÜÀí")||frames.get("ĞÂÊé¶©¹º¹ÜÀí").isClosed()) {
+			if (!frames.containsKey("æ–°ä¹¦è®¢è´­ç®¡ç†")||frames.get("æ–°ä¹¦è®¢è´­ç®¡ç†").isClosed()) {
 				newBookOrderIFrame iframe=new newBookOrderIFrame();
-				frames.put("ĞÂÊé¶©¹º¹ÜÀí", iframe);
-				Library.addIFame(frames.get("ĞÂÊé¶©¹º¹ÜÀí"));
+				frames.put("æ–°ä¹¦è®¢è´­ç®¡ç†", iframe);
+				Library.addIFame(frames.get("æ–°ä¹¦è®¢è´­ç®¡ç†"));
 			}
 		}
 	}
@@ -215,15 +215,15 @@ public class MenuActions {
 		 */
 		private static final long serialVersionUID = 1L;
 		BookTypeModiAction() {
-			super("Í¼ÊéÀà±ğĞŞ¸Ä", null);
-			putValue(Action.LONG_DESCRIPTION, "ĞŞ¸ÄÍ¼ÊéµÄÀà±ğĞÅÏ¢");
-			putValue(Action.SHORT_DESCRIPTION, "Í¼ÊéÀà±ğĞŞ¸Ä");
+			super("å›¾ä¹¦ç±»åˆ«ä¿®æ”¹", null);
+			putValue(Action.LONG_DESCRIPTION, "ä¿®æ”¹å›¾ä¹¦çš„ç±»åˆ«ä¿¡æ¯");
+			putValue(Action.SHORT_DESCRIPTION, "å›¾ä¹¦ç±»åˆ«ä¿®æ”¹");
 		}
 		public void actionPerformed(ActionEvent e) {
-			if (!frames.containsKey("Í¼ÊéÀà±ğĞŞ¸Ä")||frames.get("Í¼ÊéÀà±ğĞŞ¸Ä").isClosed()) {
+			if (!frames.containsKey("å›¾ä¹¦ç±»åˆ«ä¿®æ”¹")||frames.get("å›¾ä¹¦ç±»åˆ«ä¿®æ”¹").isClosed()) {
 				BookTypeModiAndDelIFrame iframe=new BookTypeModiAndDelIFrame();
-				frames.put("Í¼ÊéÀà±ğĞŞ¸Ä", iframe);
-				Library.addIFame(frames.get("Í¼ÊéÀà±ğĞŞ¸Ä"));
+				frames.put("å›¾ä¹¦ç±»åˆ«ä¿®æ”¹", iframe);
+				Library.addIFame(frames.get("å›¾ä¹¦ç±»åˆ«ä¿®æ”¹"));
 			}
 		}
 	}
@@ -234,15 +234,15 @@ public class MenuActions {
 		 */
 		private static final long serialVersionUID = 1L;
 		BookTypeAddAction() {
-			super("Í¼ÊéÀà±ğÌí¼Ó", null);
-			putValue(Action.LONG_DESCRIPTION, "ÎªÍ¼Êé¹İÌí¼ÓĞÂµÄÍ¼ÊéÀà±ğ");
-			putValue(Action.SHORT_DESCRIPTION, "Í¼ÊéÀà±ğÌí¼Ó");
+			super("å›¾ä¹¦ç±»åˆ«æ·»åŠ ", null);
+			putValue(Action.LONG_DESCRIPTION, "ä¸ºå›¾ä¹¦é¦†æ·»åŠ æ–°çš„å›¾ä¹¦ç±»åˆ«");
+			putValue(Action.SHORT_DESCRIPTION, "å›¾ä¹¦ç±»åˆ«æ·»åŠ ");
 		}
 		public void actionPerformed(ActionEvent e) {
-			if (!frames.containsKey("Í¼ÊéÀà±ğÌí¼Ó")||frames.get("Í¼ÊéÀà±ğÌí¼Ó").isClosed()) {
+			if (!frames.containsKey("å›¾ä¹¦ç±»åˆ«æ·»åŠ ")||frames.get("å›¾ä¹¦ç±»åˆ«æ·»åŠ ").isClosed()) {
 				BookTypeAddIFrame iframe=new BookTypeAddIFrame();
-				frames.put("Í¼ÊéÀà±ğÌí¼Ó", iframe);
-				Library.addIFame(frames.get("Í¼ÊéÀà±ğÌí¼Ó"));
+				frames.put("å›¾ä¹¦ç±»åˆ«æ·»åŠ ", iframe);
+				Library.addIFame(frames.get("å›¾ä¹¦ç±»åˆ«æ·»åŠ "));
 			}
 		}
 	}
@@ -252,16 +252,16 @@ public class MenuActions {
 		 */
 		private static final long serialVersionUID = 1L;
 		ReaderModiAction() {
-			super("¶ÁÕßĞŞ¸ÄÓëÉ¾³ı", null);
-			putValue(Action.LONG_DESCRIPTION, "ĞŞ¸ÄºÍÉ¾³ı¶ÁÕßµÄ»ù±¾ĞÅÏ¢");
-			putValue(Action.SHORT_DESCRIPTION, "¶ÁÕßĞŞ¸ÄÓëÉ¾³ı");
+			super("è¯»è€…ä¿®æ”¹ä¸åˆ é™¤", null);
+			putValue(Action.LONG_DESCRIPTION, "ä¿®æ”¹å’Œåˆ é™¤è¯»è€…çš„åŸºæœ¬ä¿¡æ¯");
+			putValue(Action.SHORT_DESCRIPTION, "è¯»è€…ä¿®æ”¹ä¸åˆ é™¤");
 		}
 		public void actionPerformed(ActionEvent e) {
 			
-			if (!frames.containsKey("¶ÁÕßĞÅÏ¢ĞŞ¸ÄÓëÉ¾³ı")||frames.get("¶ÁÕßĞÅÏ¢ĞŞ¸ÄÓëÉ¾³ı").isClosed()) {
+			if (!frames.containsKey("è¯»è€…ä¿¡æ¯ä¿®æ”¹ä¸åˆ é™¤")||frames.get("è¯»è€…ä¿¡æ¯ä¿®æ”¹ä¸åˆ é™¤").isClosed()) {
 				ReaderModiAndDelIFrame iframe=new ReaderModiAndDelIFrame();
-				frames.put("¶ÁÕßĞÅÏ¢ĞŞ¸ÄÓëÉ¾³ı", iframe);
-				Library.addIFame(frames.get("¶ÁÕßĞÅÏ¢ĞŞ¸ÄÓëÉ¾³ı"));
+				frames.put("è¯»è€…ä¿¡æ¯ä¿®æ”¹ä¸åˆ é™¤", iframe);
+				Library.addIFame(frames.get("è¯»è€…ä¿¡æ¯ä¿®æ”¹ä¸åˆ é™¤"));
 			}
 		}
 	}
@@ -272,66 +272,66 @@ public class MenuActions {
 		 */
 		private static final long serialVersionUID = 1L;
 		ReaderAddAction() {
-			super("¶ÁÕßĞÅÏ¢Ìí¼Ó", null);
-			putValue(Action.LONG_DESCRIPTION, "ÎªÍ¼Êé¹İÌí¼ÓĞÂµÄ¶ÁÕß»áÔ±ĞÅÏ¢");
-			putValue(Action.SHORT_DESCRIPTION, "¶ÁÕßĞÅÏ¢Ìí¼Ó");
+			super("è¯»è€…ä¿¡æ¯æ·»åŠ ", null);
+			putValue(Action.LONG_DESCRIPTION, "ä¸ºå›¾ä¹¦é¦†æ·»åŠ æ–°çš„è¯»è€…ä¼šå‘˜ä¿¡æ¯");
+			putValue(Action.SHORT_DESCRIPTION, "è¯»è€…ä¿¡æ¯æ·»åŠ ");
 		}
 		public void actionPerformed(ActionEvent e) {
-			if (!frames.containsKey("¶ÁÕßÏà¹ØĞÅÏ¢Ìí¼Ó")||frames.get("¶ÁÕßÏà¹ØĞÅÏ¢Ìí¼Ó").isClosed()) {
+			if (!frames.containsKey("è¯»è€…ç›¸å…³ä¿¡æ¯æ·»åŠ ")||frames.get("è¯»è€…ç›¸å…³ä¿¡æ¯æ·»åŠ ").isClosed()) {
 				ReaderAddIFrame iframe=new ReaderAddIFrame();
-				frames.put("¶ÁÕßÏà¹ØĞÅÏ¢Ìí¼Ó", iframe);
-				Library.addIFame(frames.get("¶ÁÕßÏà¹ØĞÅÏ¢Ìí¼Ó"));
+				frames.put("è¯»è€…ç›¸å…³ä¿¡æ¯æ·»åŠ ", iframe);
+				Library.addIFame(frames.get("è¯»è€…ç›¸å…³ä¿¡æ¯æ·»åŠ "));
 			}
 		}
 	}
-	//Í¼ÊéĞŞ¸ÄÓëÉ¾³ı
+	//å›¾ä¹¦ä¿®æ”¹ä¸åˆ é™¤
 	private static class BookModiAction extends AbstractAction {
 		/**
 		 * 
 		 */
 		private static final long serialVersionUID = 1L;
 		BookModiAction() {
-			super("Í¼ÊéĞŞ¸Ä", null);
-			putValue(Action.LONG_DESCRIPTION, "ĞŞ¸ÄºÍÉ¾³ıÍ¼ÊéĞÅÏ¢");
-			putValue(Action.SHORT_DESCRIPTION, "Í¼ÊéĞŞ¸Ä");
+			super("å›¾ä¹¦ä¿®æ”¹", null);
+			putValue(Action.LONG_DESCRIPTION, "ä¿®æ”¹å’Œåˆ é™¤å›¾ä¹¦ä¿¡æ¯");
+			putValue(Action.SHORT_DESCRIPTION, "å›¾ä¹¦ä¿®æ”¹");
 		}
 		public void actionPerformed(ActionEvent e) {
-			if (!frames.containsKey("Í¼ÊéĞŞ¸Ä")||frames.get("Í¼ÊéĞŞ¸Ä").isClosed()) {
+			if (!frames.containsKey("å›¾ä¹¦ä¿®æ”¹")||frames.get("å›¾ä¹¦ä¿®æ”¹").isClosed()) {
 				BookModiAndDelIFrame iframe=new BookModiAndDelIFrame();
-				frames.put("Í¼ÊéĞŞ¸Ä", iframe);
-				Library.addIFame(frames.get("Í¼ÊéĞŞ¸Ä"));
+				frames.put("å›¾ä¹¦ä¿®æ”¹", iframe);
+				Library.addIFame(frames.get("å›¾ä¹¦ä¿®æ”¹"));
 			}
 		}
 	}
-	private static class BookAddAction extends AbstractAction {				// Í¼ÊéĞÅÏ¢Ìí¼Ó£­£­£­ÒÑ¾­ÊµÏÖ£¬Çë²ÎÕÕ
+	private static class BookAddAction extends AbstractAction {				// å›¾ä¹¦ä¿¡æ¯æ·»åŠ ï¼ï¼ï¼å·²ç»å®ç°ï¼Œè¯·å‚ç…§
 		/**
 		 * 
 		 */
 		private static final long serialVersionUID = 1L;
 		BookAddAction() {
 
-			super("Í¼ÊéĞÅÏ¢Ìí¼Ó", null);
+			super("å›¾ä¹¦ä¿¡æ¯æ·»åŠ ", null);
 			//super();
-			putValue(Action.LONG_DESCRIPTION, "ÎªÍ¼Êé¹İÌí¼ÓĞÂµÄÍ¼ÊéĞÅÏ¢");
-			putValue(Action.SHORT_DESCRIPTION, "Í¼ÊéĞÅÏ¢Ìí¼Ó");
+			putValue(Action.LONG_DESCRIPTION, "ä¸ºå›¾ä¹¦é¦†æ·»åŠ æ–°çš„å›¾ä¹¦ä¿¡æ¯");
+			putValue(Action.SHORT_DESCRIPTION, "å›¾ä¹¦ä¿¡æ¯æ·»åŠ ");
 		}
 		public void actionPerformed(ActionEvent e) {
-			if (!frames.containsKey("Í¼ÊéĞÅÏ¢Ìí¼Ó")||frames.get("Í¼ÊéĞÅÏ¢Ìí¼Ó").isClosed()) {
+			if (!frames.containsKey("å›¾ä¹¦ä¿¡æ¯æ·»åŠ ")||frames.get("å›¾ä¹¦ä¿¡æ¯æ·»åŠ ").isClosed()) {
 				BookAddIFrame iframe = new BookAddIFrame();
-				frames.put("Í¼ÊéĞÅÏ¢Ìí¼Ó", iframe);
-				Library.addIFame(frames.get("Í¼ÊéĞÅÏ¢Ìí¼Ó"));
+				frames.put("å›¾ä¹¦ä¿¡æ¯æ·»åŠ ", iframe);
+				Library.addIFame(frames.get("å›¾ä¹¦ä¿¡æ¯æ·»åŠ "));
 			}
 		}
 	}
-	private static class ExitAction extends AbstractAction { // ÍË³öÏµÍ³¶¯×÷
+	private static class ExitAction extends AbstractAction { // é€€å‡ºç³»ç»ŸåŠ¨ä½œ
 		/**
 		 * 
 		 */
 		private static final long serialVersionUID = 1L;
 		public ExitAction() {
-			super("ÍË³öÏµÍ³", null);
-			putValue(Action.LONG_DESCRIPTION, "ÍË³öÍ¼Êé¹İ¹ÜÀíÏµÍ³");
-			putValue(Action.SHORT_DESCRIPTION, "ÍË³öÏµÍ³");
+			super("é€€å‡ºç³»ç»Ÿ", null);
+			putValue(Action.LONG_DESCRIPTION, "é€€å‡ºå›¾ä¹¦é¦†ç®¡ç†ç³»ç»Ÿ");
+			putValue(Action.SHORT_DESCRIPTION, "é€€å‡ºç³»ç»Ÿ");
 		}
 		public void actionPerformed(final ActionEvent e) {
 			System.exit(0);
