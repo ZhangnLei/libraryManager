@@ -403,19 +403,19 @@ public class DbHelper {
         try {
             while (rs.next()) {
                 OrderAndBookInfo order=new OrderAndBookInfo();
-                order.setISBN(rs.getString(1));
-                order.setOrderdate(rs.getDate(2));
-                order.setNumber(rs.getString(3));
-                order.setOperator(rs.getString(4));
-                order.setCheckAndAccept(rs.getString(5));
-                order.setZk(rs.getDouble(6));
-                order.setTypeId(rs.getString(8));
-                order.setBookname(rs.getString(9));
-                order.setWriter(rs.getString(10));
-                order.setTraslator(rs.getString(11));
-                order.setPublisher(rs.getString(12));
-                order.setDate(rs.getDate(13));
-                order.setPrice(rs.getDouble(14));
+                order.setISBN(rs.getString("ISBN"));
+                order.setOrderdate(rs.getDate("date"));
+                order.setNumber(rs.getString("number"));
+                order.setOperator(rs.getString("operator"));
+                order.setCheckAndAccept(rs.getString("checkAndAccept"));
+                order.setZk(rs.getDouble("zk"));
+                order.setTypeId(rs.getString("typeid"));
+                order.setBookname(rs.getString("bookname"));
+                order.setWriter(rs.getString("writer"));
+                order.setTraslator(rs.getString("translator"));
+                order.setPublisher(rs.getString("publisher"));
+                order.setDate(rs.getDate("date"));
+                order.setPrice(rs.getDouble("price"));
                 list.add(order);
             }
         } catch (Exception e) {
@@ -545,14 +545,14 @@ public class DbHelper {
         try {
             while (s.next()) {
                 BookInfo bookinfo=new BookInfo();
-                bookinfo.setISBN(s.getString(1));
-                bookinfo.setTypeid(s.getString(2));
-                bookinfo.setBookname(s.getString(3));
-                bookinfo.setWriter(s.getString(4));
-                bookinfo.setTranslator(s.getString(5));
-                bookinfo.setPublisher(s.getString(6));
-                bookinfo.setDate(s.getDate(7));
-                bookinfo.setPrice(s.getDouble(8));
+                bookinfo.setISBN(s.getString("ISBN"));
+                bookinfo.setTypeid(s.getString("typeid"));
+                bookinfo.setBookname(s.getString("bookname"));
+                bookinfo.setWriter(s.getString("writer"));
+                bookinfo.setTranslator(s.getString("translator"));
+                bookinfo.setPublisher(s.getString("publisher"));
+                bookinfo.setDate(s.getDate("date"));
+                bookinfo.setPrice(s.getDouble("price"));
                 list.add(bookinfo);
             }
         } catch (Exception e) {
@@ -569,14 +569,14 @@ public class DbHelper {
         try {
             while(s.next()){
                 BookInfo bookinfo=new BookInfo();
-                bookinfo.setISBN(s.getString(1));
-                bookinfo.setTypeid(s.getString(2));
-                bookinfo.setBookname(s.getString(3));
-                bookinfo.setWriter(s.getString(4));
-                bookinfo.setTranslator(s.getString(5));
-                bookinfo.setPublisher(s.getString(6));
-                bookinfo.setDate(s.getDate(7));
-                bookinfo.setPrice(s.getDouble(8));
+                bookinfo.setISBN(s.getString("ISBN"));
+                bookinfo.setTypeid(s.getString("typeid"));
+                bookinfo.setBookname(s.getString("bookname"));
+                bookinfo.setWriter(s.getString("writer"));
+                bookinfo.setTranslator(s.getString("translator"));
+                bookinfo.setPublisher(s.getString("publisher"));
+                bookinfo.setDate(s.getDate("date"));
+                bookinfo.setPrice(s.getDouble("price"));
                 list.add(bookinfo);
             }
         } catch (SQLException e) {
@@ -596,14 +596,14 @@ public class DbHelper {
         try {
             while(s.next()){
                 BookInfo bookinfo=new BookInfo();
-                bookinfo.setISBN(s.getString(1));
-                bookinfo.setTypeid(s.getString(2));
-                bookinfo.setBookname(s.getString(3));
-                bookinfo.setWriter(s.getString(4));
-                bookinfo.setTranslator(s.getString(5));
-                bookinfo.setPublisher(s.getString(6));
-                bookinfo.setDate(s.getDate(7));
-                bookinfo.setPrice(s.getDouble(8));
+                bookinfo.setISBN(s.getString("ISBN"));
+                bookinfo.setTypeid(s.getString("typeid"));
+                bookinfo.setBookname(s.getString("bookname"));
+                bookinfo.setWriter(s.getString("writer"));
+                bookinfo.setTranslator(s.getString("translator"));
+                bookinfo.setPublisher(s.getString("publisher"));
+                bookinfo.setDate(s.getDate("date"));
+                bookinfo.setPrice(s.getDouble("price"));
                 list.add(bookinfo);
             }
         } catch (SQLException e) {
@@ -634,14 +634,14 @@ public class DbHelper {
         try {
             while (rs.next()) {
                 user user=new user();
-                user.setId(rs.getInt(1));
-                user.setName(rs.getString(2));
-                user.setSex(rs.getString(3));
-                user.setAge(rs.getInt(4));
-                user.setIdentityCard(rs.getString(5));
-                user.setWorkdate(rs.getDate(6));
-                user.setTel(rs.getString(7));
-                user.setPassword(rs.getString(8));
+                user.setId(rs.getInt("id"));
+                user.setName(rs.getString("name"));
+                user.setSex(rs.getString("sex"));
+                user.setAge(rs.getInt("age"));
+                user.setIdentityCard(rs.getString("identityCard"));
+                user.setWorkdate(rs.getDate("workdate"));
+                user.setTel(rs.getString("tel"));
+                user.setPassword(rs.getString("password"));
                 list.add(user);
             }
         } catch (Exception e) {

@@ -184,7 +184,7 @@ public class newBookOrderIFrame extends JInternalFrame {
 			map.put(item.getId(), item);
 			
 		}
-		String[] array=new String[]{"***出版社","**信息出版社","**大型出版社","***小型出版社"};
+		String[] array=new String[]{"uestc Press","tsinghua university Press","Industrial Press","Jsdfa Press","Kasdfas Press"};
 		cbs.setModel(new DefaultComboBoxModel(array));
 
 		final JPanel panel_2 = new JPanel();
