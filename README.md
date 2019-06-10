@@ -1,3 +1,2 @@
 # libraryManager
-工程设计2
-需要mysql-cinnection-java.jar
+图书管理系统
